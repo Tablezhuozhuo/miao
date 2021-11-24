@@ -12,7 +12,8 @@
       width: 800px;
     }
 
-    div {
+    label {
+    display: inline-block;
       background-image: url(https://pic4.zhimg.com/80/85110df47e795d79bcba922dcc738033_1440w.png);
       background-repeat: no-repeat;
       width: 27px;
@@ -23,16 +24,18 @@
       transition: 0s;
     }
 
-    div:hover {
+    input:checked + label:hover {
       background-position: 100%;
       transition: 1s steps(28, start);
 
     }
+
   </style>
 </head>
 
 <body>
-  <div></div>
+  <div></div><input type="checkbox" id="heart" hidden>
+  <label for="heart"></label>
 </body>
 
 </html>
