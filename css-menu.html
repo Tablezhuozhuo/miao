@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      margin: 0;
+      list-style: none;
+      padding: 0;
+    }
+    .main-menu ul {
+      display: none;
+    }
+    li:hover {
+      background-color: gold;
+    }
+    .main-menu li {
+      position: relative;
+      white-space: nowrap;
+    }
+    .main-menu>li {
+      display: inline-block;
+    }
+    li:hover>ul {
+      display: block;
+    }
+    ul {
+      position: absolute;
+    }
+    ul ul ul {
+      top: 0;
+      left: 100%;
+    }
+  </style>
+</head>
+<body>
+  <ul class="main-menu">
+    <li>文件
+      <ul>
+        <li>新建文件
+          <ul>
+            <li>1111111111</li>
+            <li>2111111111</li>
+            <li>3111111111</li>
+          </ul>
+        <li>新建窗口
+          <ul>
+            <li>a
+              <ul>
+                <li>1111111111</li>
+                <li>2111111111</li>
+                <li>3111111111</li>
+              </ul>
+            </li>
+            <li>b
+              <ul>
+                <li>1111111111</li>
+                <li>2111111111</li>
+                <li>3111111111</li>
+              </ul>
+            </li>
+            <li>c</li>
+          </ul>
+        </li>
+        <li>打开文件</li>
+      </ul>
+    </li>
+    <li>文件
+      <ul>
+        <li>新建文件
+        <li>新建窗口</li>
+        <li>打开文件</li>
+      </ul>
+    </li>
+    <li>文件
+      <ul>
+        <li>新建文件
+        <li>新建窗口</li>
+        <li>打开文件</li>
+      </ul>
+    </li>
+    <li>文件
+      <ul>
+        <li>新建文件
+        <li>新建窗口</li>
+        <li>打开文件</li>
+      </ul>
+    </li>
+  </ul>
+</body>
+</html>
