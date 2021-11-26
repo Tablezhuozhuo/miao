@@ -14,42 +14,45 @@
     div {
       height: 40px;
       width: 100px;
-      border: 1px solid;
+      border: 2px solid #c7c7c7;
       border-radius: 40px;
-
+      transition: 1s;
+      box-shadow: inset 0 0 0 0px white;
 
     }
 
     label {
       position: absolute;
-      top: 3px;
-      left: 3px;
+      top: 4px;
+      left: 4px;
       border-radius: 40px;
-      border: 1px solid;
+      border: 1px solid #c7c7c7;
       width: 34px;
       height: 34px;
+      transition: 2s;
+      box-shadow: 0 1px 2px #999;
+      background-color: white;
       transition: 1s;
-
     }
 
-    input:checked+label {
-      left: 63px;
-      background-color: #d6d4d4;
-    }
-
-    input:checked+label+div {
+    input:checked+div {
       background-color: #15ff00;
-
-
+      box-shadow: inset 0 0 0 20px #15ff00;
 
       transition: 1s;
+    }
+
+    input:checked+div label {
+      left: 63px;
+    }
   </style>
 </head>
 
 <body>
   <input type="checkbox" id="ios-checkbox" hidden>
-  <label for="ios-checkbox"></label>
-  <div></div>
+  <div>
+    <label for="ios-checkbox"></label>
+  </div>
 </body>
 
 </html>
