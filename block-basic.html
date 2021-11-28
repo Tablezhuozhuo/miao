@@ -7,70 +7,75 @@
   <title>JS Bin</title>
 </head>
 <style>
-  .e {
+  body {
+    margin: 20px;
+  }
+
+  header {
     background-color: red;
-    width: auto;
-  }
-  div p {
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0.1ex 0.5em;
-    max-width:50em;
+    1width: auto;
   }
 
-  f {
-    border: black solid;
-    padding: 0.1ex 0.5em;
-    max-width:35em;
-    margin-right: auto;
-    margin-left: auto;
-    width:auto;
+  header div {
+    margin: 20px auto;
+    1padding: 0.1ex 0.5em;
+    1max-width: 50em;
+    width: 600px;
+    background-color: blue;
   }
 
-  .a {
+  main {
+    border: black solid 5px;
+    width: 600px;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  main p {
     overflow: auto;
     height: 4em;
+
   }
 
-  .b {
-    overflow: auto;
-    height: 4em;
+  main div {
+    background-color: violet;
+    height: 50px;
   }
-  .d{
-    background-color:violet;
-    height: 50px;}
-    .d:hover{
-    padding-left: 0;
-    margin-left: -1ex;
-    }
-  .g{
+
+  main div:hover {
+    margin: 0 -1ex;
+  }
+
+  footer {
     height: 0;
-  width: 0;
-  margin: 20px 30px 30px 30px;
-  border: 50px solid;
-  border-color: red green orange yellow;
-  border-left-width: 50px;
-  border-right-width: 50px;
-  border-bottom-width: 50px;
-  border-top-width: 0;
-  border-left-color: transparent;
-  border-right-color: transparent;
-  margin: auto;
-}
+    width: 0;
+    margin: auto;
+    border: 50px solid;
+    border-color: transparent transparent orange;
+  }
 </style>
+
 <body>
-  <div class=e>
-    <p>aaaaa</p>
-  </div>
-  <div class=f>
-    <p class="a">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, sequi perferendis, id suscipit harum omnis
-      error commodi quasi ad ut earum. Odit vel nostrum, et illum voluptatibus fugit soluta id?Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit omnis nam cum soluta accusantium expedita porro consequatur voluptas eos possimus. Doloribus rem, sit non deserunt dolorum tempora qui repellat nobis?</p>
-    <p class="d"></p>
-    <p class="b">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, sequi perferendis, id suscipit harum omnis
+  <header>
+    <div>aaaaa</div>
+  </header>
+  <main>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, sequi perferendis, id suscipit harum
+      omnis
+      error commodi quasi ad ut earum. Odit vel nostrum, et illum voluptatibus fugit soluta id?Lorem ipsum dolor sit
+      amet consectetur adipisicing elit. Reprehenderit omnis nam cum soluta accusantium expedita porro consequatur
+      voluptas eos possimus. Doloribus rem, sit non deserunt dolorum tempora qui repellat nobis?</p>
+    <div></div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, sequi perferendis, id suscipit harum
+      omnis
       error commodi
-      quasi ad ut earum. Odit vel nostrum, et illum voluptatibus fugit soluta id? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate repudiandae omnis dolorem deleniti excepturi ut eveniet in, hic ipsum ducimus labore explicabo, eum iste quibusdam eligendi nesciunt totam, ea ipsa!</p>
-  </div>
-  <p class=g></p>
+      quasi ad ut earum. Odit vel nostrum, et illum voluptatibus fugit soluta id? Lorem ipsum dolor sit amet
+      consectetur, adipisicing elit. Cupiditate repudiandae omnis dolorem deleniti excepturi ut eveniet in, hic ipsum
+      ducimus labore explicabo, eum iste quibusdam eligendi nesciunt totam, ea ipsa!</p>
+  </main>
+
+  <footer></footer>
 </body>
 
 </html>
