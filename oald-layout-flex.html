@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body,
+    html {
+      margin: 0;
+      height: 100%;
+    }
+
+    div {
+      display: flex;
+      font-size: 2em;
+      height: 100%;
+
+    }
+
+    aside {
+      width: 100px;
+      height: 100%;
+      overflow: auto;
+    }
+
+    section {
+      width: 0;
+      flex-grow: 1;
+      display: flex;
+      flex-flow: column;
+
+
+
+    }
+
+    header {
+      height: 100px;
+      overflow: auto;
+
+    }
+
+    main {
+      flex-grow: 1;
+      overflow: auto;
+      height: 0;
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <aside>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at tempore expedita sint cumque, sed hic optio,
+      officia illo alias, nam porro neque beatae modi itaque aut nesciunt maiores ullam.</aside>
+    <section>
+      <header>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sequi vel reiciendis perferendis iure
+        obcaecati fugiat veniam ratione quo saepe odio, quaerat porro inventore accusantium delectus! Deleniti sunt
+        adipisci velit.</header>
+      <main>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit nam libero eveniet aperiam corporis tempora
+        dolor omnis at dolores similique, cum, neque perferendis eaque saepe itaque harum excepturi cumque
+        necessitatibus.
+      </main>
+    </section>
+    <aside>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat atque magnam deleniti aliquid rem
+      aspernatur
+      eum optio nesciunt doloremque dolor, officia quis. Obcaecati modi blanditiis reiciendis quod, alias dolor sint.
+    </aside>
+    <aside>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus ratione perspiciatis voluptas distinctio,
+      eaque in minima aut nobis cupiditate, ipsum quis quaerat aliquid reiciendis nisi rem harum est eligendi ipsa.
+    </aside>
+  </div>
+</body>
+
+</html>
