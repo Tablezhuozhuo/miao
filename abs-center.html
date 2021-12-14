@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 居中方法1 inline-block 设置行高 */
+
+1div {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+}
+1section {
+  display: inline-block;
+  width: 200px;
+  line-height: normal;
+  vertical-align: middle;
+}
+/* 居中方法2 定位+2D偏移 可应用于子元素比父元素大 兼容性强*/
+
+1div {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  margin: 200px;
+}
+1section {
+  width: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* 居中方法3 flex 如果子元素比父元素小 可以直接auto 可应用于子元素比父元素大 */
+
+1div {
+  width: 100px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+1section {
+  1margin: auto;
+}
+/* 居中方法4 绝对定位  */
+
+div {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+section {
+  position: absolute;
+  top: 0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin: auto;
+  width: 100px;
+  height: 200px;
+}
+/* 居中方法5 table-cell  */
+
+1div {
+  display: table-cell;
+  width: 100px;
+  height: 300px;
+  vertical-align: middle;
+}
+1section {
+  margin: auto;
+}
+  </style>
+</head>
+<body>
+  <div>
+    <section>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis naborum corporis, veni</section>
+  </div>
+</body>
+</html>
