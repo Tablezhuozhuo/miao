@@ -127,8 +127,153 @@
   var B = Number(prompt('B:'))
   console.log(A * B)
 </script>
-<script type id="ch0103/20">
+<script type="xxx" id="ch0103/20">
   var n = Number(prompt('n:'))
   console.log(Math.pow(2, n))
   1console.log(2 ** 3)
+</script>
+<script type="xxx" id="ch0104/01">
+  var N = Number(prompt('N:'))
+  console.log(N == 0 ? 'zero' : (N > 0 ? 'positive' : 'negative'))
+</script>
+<script type="xxx" id="ch0104/02">
+  var n = Number(prompt('n:'))
+  var N = Math.abs(n)
+  console.log(N.toFixed(2))
+</script>
+<script type="xxx" id="ch0104/03">
+  var n = Number(prompt('n:'))
+  console.log(n % 2 != 0 ? 'odd' : 'even')
+</script>
+<script type id="ch0104/04">
+//ascii
+</script>
+<script type="xxx" id="ch0104/05">
+  var x = Number(prompt('x:'))
+  var y = Number(prompt('y:'))
+  console.log(x == y ? '=' : (x > y ? '>' : '<'))
+</script>
+<script type="xxx" id="ch0104/06">
+  var x = Number(prompt('x:'))
+  console.log(x >= 10 && x <= 99 ? '1' : '0')
+</script>
+<script type="xxx" id="ch0104/07">
+  var x = Number(prompt('幸运:'))
+  var y = Number(prompt('鼓励:'))
+  console.log(x >= 10 || y >= 20 ? '1' : '0')
+</script>
+<script type="xxx" id="ch0104/08">
+  var x = Number(prompt('x:'))
+  console.log(x % 3 == 0 && x % 5 == 0 ? 'YES' : 'NO')
+</script>
+<script type="xxx" id="ch0104/09">
+  var x = Number(prompt('x:'))
+  var a = (x % 3 == 0)
+  var b = (x % 5 == 0)
+  var c = (x % 7 == 0)
+  console.log
+  (x % 3 == 0 ?
+    (x % 5 == 0 ?
+      (x % 7 == 0 ? console.log(3, 5, 7) : console.log(3, 5)
+      )
+      :
+      ((x % 7 == 0) ? console.log(3, 7): console.log(3)
+      )
+    )
+    :
+    (x % 5 == 0 ?
+      (x % 7 == 0 ? console.log(5, 7) : console.log(5)
+      )
+      :
+      (x % 7 == 0 ? console.log(7) : console.log(n)
+      )
+    )
+  )
+</script>
+<script type="xxx" id="ch0104/10">
+  var x = Number(prompt('语文:'))
+  var y = Number(prompt('数学:'))
+  console.log((x >= 60 && y < 60 || y >= 60 && x < 60) ? "1":"0")
+</script>
+<script type="xxx" id="ch0104/11">
+  var x = Number(prompt('x:'))
+  console.log(x != 1 && x != 3 && x != 5 ? "YES" : "NO")
+</script>
+<script type="xxx" id="ch0104/12">
+  var s = Number(prompt('s:'))
+
+
+  console.log(
+                (27 + 23 + s / 3) == (s / 1.2) ? "All" : ((27 + 23 + s / 3) < (s / 1.2) ? "Bike" : "Walk")
+              )
+</script>
+<script type="xxx" id="ch0104/13">
+
+  var N = Number(prompt('N:'))
+   console.log(
+                N < 5 ? ((-N + 2.5).toFixed(3)) : (
+                N < 10 ? (2 - 1.5(x - 3)(x - 3)).toFixed(3) : (x / 2 - 1.5).toFixed(3))
+              )
+</script>
+<script type="xxx" id="ch0104/14">
+  var v = Number(prompt('重量:'))
+  var h = prompt('加急(y/n):')
+  console.log(
+                v <= 1000 ? (h == 'y' ? 13 : 8) :
+                (
+                  (h == 'y' ?
+                    ((Math.ceil((v - 1000) / 500)) * 4 + 13) : ((Math.ceil((v - 1000) / 500)) * 4 + 8)
+                  )
+                )
+              )
+</script>
+<script type="xxx" id="ch0104/15">
+  var a = Number(prompt('a:'))
+  var b = Number(prompt('b:'))
+  var c = Number(prompt('c:'))
+  console.log(a > b ? (a > c ? a : c) : (b > c ? b : c))
+</script>
+<script type="xxx" id="ch0104/16">
+  var a = Number(prompt('a:'))
+  var b = Number(prompt('b:'))
+  var c = Number(prompt('c:'))
+  console.log(a + b > c && a + c > b && b + c > a ? 'yes' : 'no')
+</script>
+<script type="xxx" id="ch0104/17">
+  var y = Number(prompt('y:'))
+  console.log((y % 4 == 0 && y % 100 != 0 || y % 400 == 0) ? 'Y' : 'N')
+</script>
+<script type="xxx" id="ch0104/18">
+  var x = Number(prompt('x:'))
+  var y = Number(prompt('y:'))
+  console.log(Math.abs(x) <= 1 && Math.abs(y) <= 1 ? 'yes' : 'no')
+</script>
+<script type="xxx" id="ch0104/19">
+  var x = Number(prompt('x:'))
+  var y = Number(prompt('y:'))
+  var z = prompt('z:')
+  console.log(
+              z == '+' ? (x + y) :
+                (z == '-' ? (x - y) :
+                  (z == '*' ? (x * y) :
+                    (z == '/' ? (y == 0 ? 'Divided by zero!' : x/y ) : 'Invalid operator!')
+                  )
+                )
+              )
+</script>
+<script type="xxx" id="ch0104/20">
+  var a = Number(prompt('a:'))
+  var b = Number(prompt('b:'))
+  var c = Number(prompt('c:'))
+  var delta = b * b - 4 * a * c
+  var x1 = (-b + Math.sqrt(delta)) / (2 * a)
+  var x2 = (-b - Math.sqrt(delta)) / (2 * a)
+  console.log(
+              delta == 0 ? 'x1=x2=' + x1 :
+                (delta > 0 ? 'x1=' + x1 + ';x2=' + x2 + '，其中x1 > x2。' :
+                'x1=' + (-b / (2 * a)).toFixed(5) + '+' + (Math.sqrt(-delta) / (2 * a)).toFixed(5) + 'i' + ';x2=' + (-b / (2 * a)).toFixed(5) + '-' + (Math.sqrt(-delta) / (2 * a)).toFixed(5) + 'i')
+              )
+</script>
+<script type id="ch0104/21">
+//重复
 </script>
