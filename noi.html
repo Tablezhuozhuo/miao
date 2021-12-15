@@ -7,40 +7,46 @@
   var a = Number(prompt('a:'))
   var b = Number(prompt('b:'))
   var c = Number(prompt('c:'))
-  console.log((a + b) * c)
+  var result = (a + b) * c
+  console.log(result)
 </script>
-<script type='xxx' id="ch0103/03">
+<script id="ch0103/03">
   var a = Number(prompt('a:'))
   var b = Number(prompt('b:'))
   var c = Number(prompt('c:'))
-  console.log((a + b) / c)
+  var result = (a + b) / c
+  result = Math.trunc(result)
+  console.log(result)
 </script>
-<script type='xxx' id="ch0103/04">
+<script type id="ch0103/04">
   var a = Number(prompt('a:'))
   var b = Number(prompt('b:'))
-  console.log('整数商:' + parseInt(a / b))
-  console.log('余数:' + a % b)
+  1console.log('整数商:' + parseInt(a / b))
+  1console.log('余数:' + a % b)
+  var result = Math.trunc(a / b)
+  var reminder = a % b
+  console.log(result, reminder)
 </script>
 <script type='xxx' id="ch0103/05">
   var a = Number(prompt('a:'))
   var b = Number(prompt('b:'))
-  var c = a / b
-  console.log(c.toFixed(9))
+  var result = a / b
+  console.log(result.toFixed(9))
 </script>
 <script type='xxx' id="ch0103/06">
   var a = Number(prompt('确诊数:'))
   var b = Number(prompt('死亡数:'))
-  var c = b / a * 100
-  console.log(c.toFixed(3) + '%')
+  var result = (b / a * 100).toFixed(3)
+  console.log(result + '%')
 </script>
 <script type='xxx' id="ch0103/07">
+  var x = Number(prompt('x:'))
   var a = Number(prompt('a:'))
   var b = Number(prompt('b:'))
   var c = Number(prompt('c:'))
   var d = Number(prompt('d:'))
-  var x = Number(prompt('x:'))
-  var c = a * x * x * x + b * x * x + c * x + d
-  console.log(c.toFixed(7))
+  var result = a * x * x * x + b * x * x + c * x + d
+  console.log(result.toFixed(7))
 </script>
 <script type='xxx' id="ch0103/08">
   var f = Number(prompt('f:'))
@@ -53,9 +59,9 @@
   var d = 2 * r
   var C = 2 * pi * r
   var S = pi * r * r
-  console.log('d:'+ d.toFixed(4))
-  console.log('C:'+ C.toFixed(4))
-  console.log('S:'+ S.toFixed(4))
+  console.log(d.toFixed(4))
+  console.log(C.toFixed(4))
+  console.log(S.toFixed(4))
 </script>
 <script type='xxx' id="ch0103/10">
   var r1 = Number(prompt('r1:'))
@@ -86,7 +92,9 @@
   var pi = 3.14159
   var h = Number(prompt('h:'))
   var r = Number(prompt('r:'))
-  console.log(Math.ceil(20 / ((pi * r * r * h) / 1000)))
+  var V = pi * r * r * h / 1000
+  var result = Math.ceil(20 / V)
+  console.log(result)
 </script>
 <script type='xxx' id="ch0103/15">
   var n = Number(prompt('n:'))
@@ -113,7 +121,7 @@
   var l2 = Math.sqrt((X1 - X3) * (X1 - X3) + (Y1 - Y3) * (Y1 - Y3))
   var l3 = Math.sqrt((X3 - X2) * (X3 - X2) + (Y3 - Y2) * (Y3 - Y2))
   var p = (l1 + l2 + l3) / 2
-  var S = Math.sqrt(p * (p-l1) * (p-l2) * (p-l3))
+  var S = Math.sqrt(p * (p - l1) * (p - l2) * (p - l3))
   console.log(S.toFixed(2))
 </script>
 <script type='xxx' id="ch0103/18">
@@ -130,7 +138,6 @@
 <script type="xxx" id="ch0103/20">
   var n = Number(prompt('n:'))
   console.log(Math.pow(2, n))
-  1console.log(2 ** 3)
 </script>
 <script type="xxx" id="ch0104/01">
   var N = Number(prompt('N:'))
@@ -275,5 +282,8 @@
               )
 </script>
 <script type id="ch0104/21">
-//重复
+  var n = Number(prompt('n:'))
+  var x = Number(prompt('x:'))
+  var y = Number(prompt('y:'))
+  console.log(parseInt(n - 1 / 3 * y))
 </script>
