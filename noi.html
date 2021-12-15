@@ -142,7 +142,7 @@
   //console.log(N == 0 ? 'zero' : (N > 0 ? 'positive' : 'negative'))
   if (n > 0) {
     console.log('positive')
-  } else if (n == 0) {
+  } else if (n === 0) {
     console.log('zero')
   } else {
     console.log('negative')
@@ -220,7 +220,7 @@
   var a = (x % 3 == 0)
   var b = (x % 5 == 0)
   var c = (x % 7 == 0)
-
+  /*
   console.log
   (x % 3 == 0 ?
     (x % 5 == 0 ?
@@ -239,8 +239,7 @@
       )
     )
   )
-
-  /*
+  */
   if (x % 3 == 0) {
     if (x % 5 == 0) {
       if (x % 7 == 0) {
@@ -264,7 +263,6 @@
   } else {
     console.log(n)
   }
-  */
 </script>
 <script type id="ch0104/10">
   var x = Number(prompt('语文:'))
