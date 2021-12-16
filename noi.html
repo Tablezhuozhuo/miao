@@ -386,30 +386,33 @@
 <script type='xxx' id="ch0104/19">
   var x = Number(prompt('x:'))
   var y = Number(prompt('y:'))
-  var z = prompt('z:')
+  var op = prompt('op:')
   /*
   console.log(
-              z == '+' ? (x + y) :
-                (z == '-' ? (x - y) :
-                  (z == '*' ? (x * y) :
-                    (z == '/' ? (y == 0 ? 'Divided by zero!' : x/y ) : 'Invalid operator!')
+              op == '+' ? (x + y) :
+                (op == '-' ? (x - y) :
+                  (op == '*' ? (x * y) :
+                    (op == '/' ? (y == 0 ? 'Divided by opero!' : x/y ) : 'Invalid operator!')
                   )
                 )
               )
   */
-  if (z == '+') {
+  if (op == '+') {
     console.log(x + y)
-  } else if (z == '-') {
+  } else if (op == '-') {
     console.log(x - y)
-  } else if (z == '*') {
+  } else if (op == '*') {
     console.log(x * y)
-  } else if (z == '/') {
+  } else if (op == '/') {
     if (y == 0) {
       console.log('Divided by zero!')
     } else {
-      console.log('Invalid operator!')
+      console.log('x / y')
     }
   }
+    else{
+      console.log('Invalid operator!')
+    }
 </script>
 <script type='xxx' id="ch0104/20">
   var a = Number(prompt('a:'))
@@ -424,14 +427,24 @@
               )
   */
   if (delta == 0) {
-    var x = (-b + Math.sqrt(delta)) / (2 * a)
-    console.log('x1=x2=' + x)
+    var x = (-b ) / (2 * a)
+    console.log('x1=x2=' + x.toFixed(5))
   } else if (delta > 0) {
-    var x1 = (-b + Math.sqrt(delta)) / (2 * a)
-    var x2 = (-b - Math.sqrt(delta)) / (2 * a)
-    console.log('x1=' + x1 + '; x2=' + x2 + '，其中x1 > x2。')
+    if (a > 0) {
+      var x1 = (-b + Math.sqrt(delta)) / (2 * a)
+      var x2 = (-b - Math.sqrt(delta)) / (2 * a)
+      console.log('x1=' + x1.toFixed(5) + '; x2=' + x2.toFixed(5))
+    } else {
+      var xs = (-b + Math.sqrt(delta)) / (2 * a)
+      var xb = (-b - Math.sqrt(delta)) / (2 * a)
+      console.log('x1=' + xb.toFixed(5) + '; x2=' + xs.toFixed(5))
+    }
   } else {
-    console.log('x1=' + (-b / (2 * a)).toFixed(5) + '+' + (Math.sqrt(-delta) / (2 * a)).toFixed(5) + 'i' + ';x2=' + (-b / (2 * a)).toFixed(5) + '-' + (Math.sqrt(-delta) / (2 * a)).toFixed(5) + 'i')
+    if (a > 0) {
+      console.log('x1=' + (-b / (2 * a)).toFixed(5) + '+' + (Math.sqrt(-delta) / (2 * a)).toFixed(5) + 'i' + ';x2=' + (-b / (2 * a)).toFixed(5) + '-' + (Math.sqrt(-delta) / (2 * a)).toFixed(5) + 'i')
+    } else {
+      console.log('x1=' + (-b / (2 * a)).toFixed(5) + '+(' + (Math.sqrt(-delta) / (2 * a)).toFixed(5) + ')' + 'i' + ';x2=' + (-b / (2 * a)).toFixed(5) + '' + (Math.sqrt(-delta) / (2 * a)).toFixed(5) + 'i')
+    }
   }
 </script>
 <script type='xxx' id="ch0104/21">
@@ -443,47 +456,47 @@
 <script type='xxx' id="ch0105/01">
   var n = Number(prompt('n:'))
   var x = 0
-  var add = 0
+  var sum = 0
   while (x < n) {
   var age = Number(prompt('age:'))
   x = x + 1
-  add = age + add
+  sum = age + sum
   }
-  console.log((add / n).toFixed(2))
+  console.log((sum / n).toFixed(2))
 </script>
 <script type='xxx' id="ch0105/02">
   var x = 0
-  var add = 0
+  var sum = 0
   var money = 0
   while (x < 12) {
   var money = Number(prompt('money:'))
   x = x + 1
-  add = money + add
+  sum = money + sum
   }
-  var ave = add / 12
+  var ave = sum / 12
   console.log('$' + ave.toFixed(2))
 </script>
 <script type='xxx' id="ch0105/03">
   var n = Number(prompt('n:'))
   var x = 0
-  var add = 0
+  var sum = 0
   while (x < n) {
   var num = Number(prompt('num:'))
   x = x + 1
-  add = num + add
+  sum = num + sum
   }
-  console.log((add / n).toFixed(4))
+  console.log((sum / n).toFixed(4))
 </script>
 <script type='xxx' id="ch0105/04">
   var n = Number(prompt('n:'))
   var x = 0
-  var add = 0
+  var sum = 0
   while (x < n) {
     var num = Number(prompt('num:'))
     x = x + 1
-    add = num + add
+    sum = num + sum
   }
-  console.log(add,(add / n).toFixed(5))
+  console.log(sum,(sum / n).toFixed(5))
 </script>
 <script type='xxx' id="ch0105/05">
   var n = Number(prompt('n:'))
@@ -517,9 +530,9 @@
     console.log(max_diff)
 </script>
 <script type='xxx' id="ch0105/07">
-  var gold_add = 0
-  var silver_add = 0
-  var copper_add = 0
+  var gold_sum = 0
+  var silver_sum = 0
+  var copper_sum = 0
   var n = Number(prompt('n:'))
   var x = 0
   while (x < n) {
@@ -527,65 +540,56 @@
     var silver = Number(prompt('silver:'))
     var copper = Number(prompt('copper:'))
     x = x + 1
-    gold_add = gold + gold_add
-    silver_add = silver + silver_add
-    copper_add = copper + copper_add
+    gold_sum = gold + gold_sum
+    silver_sum = silver + silver_sum
+    copper_sum = copper + copper_sum
   }
-  var add = gold_add + silver_add + copper_add
-  console.log(gold_add, silver_add, copper_add, add)
+  var sum = gold_sum + silver_sum + copper_sum
+  console.log(gold_sum, silver_sum, copper_sum, sum)
 </script>
 <script type='xxx' id="ch0105/08">
   var n = Number(prompt('n:'))
   var sum = (n - 2) * 180
   var x = 0
-  var add = 0
+  var sum = 0
   while (x < n - 1) {
     var num = Number(prompt('num:'))
     x = x + 1
-    add = num + add
+    sum = num + sum
   }
-  console.log(sum - add)
+  console.log(sum - sum)
 </script>
 <script type='xxx' id="ch0105/09">
   var n = Number(prompt('n:'))
   var m = Number(prompt('m:'))
-  var x = 0
-  var add = 0
-  if (m % 2 != 0){
-    var num = m
-  } else {
-    var num = m + 1
+  var sum = 0
+  while (n <= m) {
+    if (n % 2 != 0) {
+      sum = n + sum
+      n = n + 2
+    } else {
+      n = n + 1
+    }
   }
-  if (n % 2 != 0) {
-  while (num <= n) {
-    add = num + add
-    num = num + 2
-  }
-  } else {
-    while (num <= n - 1) {
-      add = num + add
-      num = num + 2
-  }
-  }
-  console.log(add)
+  console.log(sum)
 </script>
 <script type='xxx' id="ch0105/10">
   var n = Number(prompt('n:'))
   var m = Number(prompt('m:'))
-  var add = 0
+  var sum = 0
   while (n <= m) {
     if (n % 17 == 0) {
-      add = n + add
+      sum = n + sum
       n = n + 17
     } else {
       n = n + 1
     }
   }
-  console.log(add)
+  console.log(sum)
 </script>
 <script type='xxx' id="ch0105/11">
   var k = Number(prompt('k:'))
-  var add = 0
+  var sum = 0
   var x = 0
   time_1 = 0
   time_5 = 0
