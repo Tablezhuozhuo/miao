@@ -546,30 +546,80 @@
   }
   console.log(sum - add)
 </script>
-<script xtype='xxx' id="ch0105/09">
-  /*
-  var m = Number(prompt('m:'))
+<script type='xxx' id="ch0105/09">
   var n = Number(prompt('n:'))
+  var m = Number(prompt('m:'))
   var x = 0
   var add = 0
-  while (x < n - m + 1) {
-    var num = Number(prompt('num:'))
-    x = x + 1
-    add = num + add
+  if (m % 2 != 0){
+    var num = m
+  } else {
+    var num = m + 1
   }
-  console.log(sum - add)
-  */
+  if (n % 2 != 0) {
+  while (num <= n) {
+    add = num + add
+    num = num + 2
+  }
+  } else {
+    while (num <= n - 1) {
+      add = num + add
+      num = num + 2
+  }
+  }
+  console.log(add)
 </script>
 <script type='xxx' id="ch0105/10">
-
+  var n = Number(prompt('n:'))
+  var m = Number(prompt('m:'))
+  var add = 0
+  while (n <= m) {
+    if (n % 17 == 0) {
+      add = n + add
+      n = n + 17
+    } else {
+      n = n + 1
+    }
+  }
+  console.log(add)
 </script>
 <script type='xxx' id="ch0105/11">
-
+  var k = Number(prompt('k:'))
+  var add = 0
+  var x = 0
+  time_1 = 0
+  time_5 = 0
+  time_10 = 0
+  while (x < k) {
+    var num = Number(prompt('num:'))
+    x = x + 1
+    if (num == 1) {
+      time_1 = time_1 + 1
+    }
+    if (num == 5) {
+      time_5 = time_5 + 1
+    }
+    if (num == 10) {
+      time_10 = time_10 + 1
+    }
+  }
+  console.log(time_1, time_5 , time_10)
 </script>
 <script type='xxx' id="ch0105/12">
-
+  var N = Number(prompt('N:'))
+  var m = Number(prompt('m:'))
+  var x = 0
+  var flag =0
+  while (x < N) {
+    var num = Number(prompt('num:'))
+    x = x + 1
+    if (num == m) {
+      flag = flag + 1
+    }
+  }
+  console.log(flag)
 </script>
-<script type='xxx' id="ch0105/13">
+<script xtype='xxx' id="ch0105/13">
 
 </script>
 <script type='xxx' id="ch0105/14">
