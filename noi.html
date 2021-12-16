@@ -656,26 +656,68 @@
   console.log(Math.trunc(M))
 </script>
 <script type='xxx' id="ch0105/16">
-  /*
   var N = Number(prompt('N:'))
   var K = Number(prompt('K:'))
-  var x = 0
-  var m = 0
-  while (m < Y) {
+  var x = 1
+  var m = N
+  M = 200
+  do {
     x = x + 1
-    M = (1 + R / 100) * M
-  }
-  console.log(Math.trunc(M))
-  */
+    M = (1 + K / 100) * M
+    m = m + N
+  } while (m <= M)
+  console.log(x)
 </script>
-<script xtype='xxx' id="ch0105/17">
-
+<script type='xxx' id="ch0105/17">
+  var k = Number(prompt('k:'))
+  var x = 0
+  var num1 = 0
+  var num2 = 1
+  do {
+    x = x + 1
+    num1 = num2 + num1
+    num2 = num1 - num2
+  } while (x < k)
+  console.log(num1)
 </script>
 <script type='xxx' id="ch0105/18">
-
+  var n = Number(prompt('n:'))
+  var sum = Number(prompt('sum:'))
+  var effect = Number(prompt('effect:'))
+  var x = effect / sum
+  var counter = 0
+  var y
+  while (counter < n - 1) {
+    var sum_new = Number(prompt('sum_new:'))
+    var effect_new = Number(prompt('effect_new:'))
+    y = effect_new / sum_new
+    counter = counter + 1
+    if (y - x > 0.05) {
+      console.log('better')
+    } else if (x - y > 0.05) {
+      console.log('worse')
+    } else {
+      console.log('same')
+    }
+  }
 </script>
 <script type='xxx' id="ch0105/19">
-
+  var n = Number(prompt('n:'))
+  var counter = 0
+  var x
+  var y
+  var p
+  var time
+  var times = 0
+  while (counter < n) {
+    counter = counter + 1
+    x = Number(prompt('x:'))
+    y = Number(prompt('y:'))
+    p = Number(prompt('p:'))
+    time = 2 * Math.sqrt(x * x  + y * y) / 50 + 1.5 * p
+    times = time + times
+  }
+    console.log(Math.ceil(times))
 </script>
 <script type='xxx' id="ch0105/20">
 
