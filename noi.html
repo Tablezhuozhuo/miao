@@ -137,7 +137,7 @@
   var n = Number(prompt('n:'))
   console.log(Math.pow(2, n))
 </script>
-<script type id="ch0104/01">
+<script type="xxx" id="ch0104/01">
   var N = Number(prompt('N:'))
   //console.log(N == 0 ? 'zero' : (N > 0 ? 'positive' : 'negative'))
   if (N > 0) {
@@ -197,10 +197,10 @@
   }
 </script>
 <script type='xxx' id="ch0104/07">
-  var x = Number(prompt('幸运:'))
-  var y = Number(prompt('鼓励:'))
+  var lucky = Number(prompt('幸运:'))
+  var encourage = Number(prompt('鼓励:'))
   //console.log(x >= 10 || y >= 20 ? '1' : '0')
-  if (x >= 10 || y >= 20) {
+  if (lucky >= 10 || encourage >= 20) {
     console.log('1')
   } else {
     console.log('0')
@@ -265,7 +265,7 @@
   var x = Number(prompt('语文:'))
   var y = Number(prompt('数学:'))
   //console.log((x >= 60 && y < 60 || y >= 60 && x < 60) ? "1":"0")
-  if ((x >= 60 && y < 60 || y >= 60 && x < 60)) {
+  if (x >= 60 && y < 60 || y >= 60 && x < 60) {
     console.log("1")
   } else {
     console.log("0")
@@ -289,7 +289,7 @@
   */
   if ((27 + 23 + s / 3) == (s / 1.2)) {
     console.log("All")
-  } else if (((27 + 23 + s) / 3) < (s / 1.2)) {
+  } else if ((27 + 23 + s / 3) < (s / 1.2)) {
     console.log("Bike")
   } else {
     console.log("Walk")
@@ -306,7 +306,7 @@
   if (N < 5) {
     console.log((-N + 2.5).toFixed(3))
   } else if (N < 10) {
-    console.log((2 - 1.5(x - 3)(x - 3)).toFixed(3))
+    console.log((2 - 1.5 * (x - 3) * (x - 3)).toFixed(3))
   } else {
     console.log((x / 2 - 1.5).toFixed(3))
   }
@@ -429,7 +429,7 @@
   } else if (delta > 0) {
     var x1 = (-b + Math.sqrt(delta)) / (2 * a)
     var x2 = (-b - Math.sqrt(delta)) / (2 * a)
-    console.log('x1=' + x1 + ';x2=' + x2 + '，其中x1 > x2。')
+    console.log('x1=' + x1 + '; x2=' + x2 + '，其中x1 > x2。')
   } else {
     console.log('x1=' + (-b / (2 * a)).toFixed(5) + '+' + (Math.sqrt(-delta) / (2 * a)).toFixed(5) + 'i' + ';x2=' + (-b / (2 * a)).toFixed(5) + '-' + (Math.sqrt(-delta) / (2 * a)).toFixed(5) + 'i')
   }
@@ -439,4 +439,232 @@
   var x = Number(prompt('x:'))
   var y = Number(prompt('y:'))
   console.log(parseInt(n - 1 / 3 * y))
+</script>
+<script type='xxx' id="ch0105/01">
+  var n = Number(prompt('n:'))
+  var x = 0
+  var add = 0
+  while (x < n) {
+  var age = Number(prompt('age:'))
+  x = x + 1
+  add = age + add
+  }
+  console.log(add / n)
+</script>
+<script type='xxx' id="ch0105/02">
+  var x = 0
+  var add = 0
+  var money = 0
+  while (x < 12) {
+  var money = Number(prompt('money:'))
+  x = x + 1
+  add = money + add
+  }
+  var ave = add / 12
+  console.log('$' + ave.toFixed(2))
+</script>
+<script type='xxx' id="ch0105/03">
+  var n = Number(prompt('n:'))
+  var x = 0
+  var add = 0
+  while (x < n) {
+  var num = Number(prompt('num:'))
+  x = x + 1
+  add = num + add
+  }
+  console.log((add / n).toFixed(4))
+</script>
+<script type='xxx' id="ch0105/04">
+  var n = Number(prompt('n:'))
+  var x = 0
+  var add = 0
+  while (x < n) {
+    var num = Number(prompt('num:'))
+    x = x + 1
+    add = num + add
+  }
+  console.log(add,(add / n).toFixed(5))
+</script>
+<script type='xxx' id="ch0105/05">
+  var n = Number(prompt('n:'))
+  var x = 0
+  var max = 0
+  while (x < n) {
+    var num = Number(prompt('num:'))
+    x = x + 1
+    if (num > max) {
+      max = num
+    }
+  }
+  console.log(max)
+</script>
+<script type='xxx' id="ch0105/06">
+  var n = Number(prompt('n:'))
+    var x = 0
+    var max = 0
+    var min = 0
+    while (x < n) {
+      var num = Number(prompt('num:'))
+      x = x + 1
+      if (num > max) {
+        max = num
+      }
+      if (num < min){
+        min = num
+      }
+    }
+    var max_diff = max - min
+    console.log(max_diff)
+</script>
+<script type='xxx' id="ch0105/07">
+  var gold_add = 0
+  var silver_add = 0
+  var copper_add = 0
+  var n = Number(prompt('n:'))
+  var x = 0
+  while (x < n) {
+    var gold = Number(prompt('gold:'))
+    var silver = Number(prompt('silver:'))
+    var copper = Number(prompt('copper:'))
+    x = x + 1
+    gold_add = gold + gold_add
+    silver_add = silver + silver_add
+    copper_add = copper + copper_add
+  }
+  var add = gold_add + silver_add + copper_add
+  console.log(gold_add, silver_add, copper_add, add)
+</script>
+<script type='xxx' id="ch0105/08">
+  var n = Number(prompt('n:'))
+  var sum = (n - 2) * 180
+  var x = 0
+  var add = 0
+  while (x < n - 1) {
+    var num = Number(prompt('num:'))
+    x = x + 1
+    add = num + add
+  }
+  console.log(sum - add)
+</script>
+<script xtype='xxx' id="ch0105/09">
+  /*
+  var m = Number(prompt('m:'))
+  var n = Number(prompt('n:'))
+  var x = 0
+  var add = 0
+  while (x < n - m + 1) {
+    var num = Number(prompt('num:'))
+    x = x + 1
+    add = num + add
+  }
+  console.log(sum - add)
+  */
+</script>
+<script type='xxx' id="ch0105/10">
+
+</script>
+<script type='xxx' id="ch0105/11">
+
+</script>
+<script type='xxx' id="ch0105/12">
+
+</script>
+<script type='xxx' id="ch0105/13">
+
+</script>
+<script type='xxx' id="ch0105/14">
+
+</script>
+<script type='xxx' id="ch0105/15">
+
+</script>
+<script type='xxx' id="ch0105/16">
+
+</script>
+<script type='xxx' id="ch0105/17">
+
+</script>
+<script type='xxx' id="ch0105/18">
+
+</script>
+<script type='xxx' id="ch0105/19">
+
+</script>
+<script type='xxx' id="ch0105/20">
+
+</script>
+<script type='xxx' id="ch0105/21">
+
+</script>
+<script type='xxx' id="ch0105/22">
+
+</script>
+<script type='xxx' id="ch0105/23">
+
+</script>
+<script type='xxx' id="ch0105/24">
+
+</script>
+<script type='xxx' id="ch0105/25">
+
+</script>
+<script type='xxx' id="ch0105/26">
+
+</script>
+<script type='xxx' id="ch0105/27">
+
+</script>
+<script type='xxx' id="ch0105/28">
+
+</script>
+<script type='xxx' id="ch0105/29">
+
+</script>
+<script type='xxx' id="ch0105/30">
+
+</script>
+<script type='xxx' id="ch0105/31">
+
+</script>
+<script type='xxx' id="ch0105/32">
+
+</script>
+<script type='xxx' id="ch0105/33">
+
+</script>
+<script type='xxx' id="ch0105/34">
+
+</script>
+<script type='xxx' id="ch0105/35">
+
+</script>
+<script type='xxx' id="ch0105/36">
+
+</script>
+<script type='xxx' id="ch0105/37">
+
+</script>
+<script type='xxx' id="ch0105/38">
+
+</script>
+<script type='xxx' id="ch0105/39">
+
+</script>
+<script type='xxx' id="ch0105/40">
+
+</script>
+<script type='xxx' id="ch0105/41">
+
+</script>
+<script type='xxx' id="ch0105/42">
+
+</script>
+<script type='xxx' id="ch0105/43">
+
+</script>
+<script type='xxx' id="ch0105/44">
+
+</script>
+<script type='xxx' id="ch0105/45">
+
 </script>
