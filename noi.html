@@ -719,7 +719,7 @@
   }
     console.log(Math.ceil(times))
 </script>
-<script xtype='xxx' id="ch0105/20">
+<script type='xxx' id="ch0105/20">
   var h = Number(prompt('h:'))
   var counter = 1
   var sum = h
@@ -779,13 +779,31 @@
   }
   if (counter < 12) {
     console.log('-' + counter)
+    while (counter < 12 ) {
+    cost = Number(prompt('cost:'))
+    counter = counter + 1
+    }
+    counter = counter + 2
   }
   if (counter == 12) {
     console.log(give_sum * 1.2 + left)
   }
 </script>
-<script type='xxx' id="ch0105/23">
-
+<script xtype='xxx' id="ch0105/23">
+  var m = Number(prompt('m:'))
+  var n = Number(prompt('n:'))
+  var counter = 0
+  var flag = 0
+  while (counter < n) {
+    var num = Number(prompt('num:'))
+    counter = counter + 1
+    if (num > m) {
+      flag = flag + 1
+      m = m + num
+    }
+    m = m - num
+  }
+  console.log(flag)
 </script>
 <script type='xxx' id="ch0105/24">
 
