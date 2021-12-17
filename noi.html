@@ -822,9 +822,36 @@
     }
   }
   console.log(time)
+seven_hundred == nine3 && seven_ten == nine_ten && seven3 == nine_hunedred
 </script>
-<script xtype='xxx' id="ch0105/25">
-
+<script type='xxx' id="ch0105/25">
+  var x = 90
+  var seven1_2
+  var seven3
+  var nine1_2
+  var nine3
+  var seven_hundred
+  var seven_ten
+  var nine_hunedred
+  var nine_ten
+  do {
+    var seven1_2 = Math.trunc(x / 7)
+    var seven3 = x % 7
+    var nine1_2 = Math.trunc(x / 9)
+    var nine3 = x % 9
+    var seven_hundred = Math.trunc(seven1_2 / 10)
+    var seven_ten = seven1_2 % 10
+    var nine_hundred = Math.trunc(nine1_2 / 10)
+    var nine_ten = nine1_2 % 10
+    x = x + 1
+    if (seven_hundred == nine3 && seven_ten == nine_ten && seven3 == nine_hundred) {
+      break
+    }
+  }
+  while (x > 0)
+  console.log(x)
+  console.log(seven_hundred, seven_ten, seven3)
+  console.log(nine_hundred, nine_ten, nine3)
 </script>
 <script type='xxx' id="ch0105/26">
 
