@@ -789,7 +789,7 @@
     console.log(give_sum * 1.2 + left)
   }
 </script>
-<script xtype='xxx' id="ch0105/23">
+<script type='xxx' id="ch0105/23">
   var m = Number(prompt('m:'))
   var n = Number(prompt('n:'))
   var counter = 0
@@ -806,9 +806,24 @@
   console.log(flag)
 </script>
 <script type='xxx' id="ch0105/24">
-
+  var n = Number(prompt('m:'))
+  var shrink
+  var relaxation
+  var counter = 0
+  var time = 0
+  while (counter < n) {
+    counter = counter + 1
+    shrink = Number(prompt('shrink:'))
+    relaxation = Number(prompt('relaxation:'))
+    if (shrink >= 90 && shrink <= 140 && relaxation <= 90 && relaxation >= 60) {
+      time = time + 1
+    } else {
+      time = 0
+    }
+  }
+  console.log(time)
 </script>
-<script type='xxx' id="ch0105/25">
+<script xtype='xxx' id="ch0105/25">
 
 </script>
 <script type='xxx' id="ch0105/26">
