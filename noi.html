@@ -720,13 +720,69 @@
     console.log(Math.ceil(times))
 </script>
 <script type='xxx' id="ch0105/20">
+  var h = Number(prompt('h:'))
+  var counter = 1
+  var sum = h
 
+  while (counter < 10) {
+    counter = counter + 1
+    h = h / 2
+    sum = sum + 2 * h
+  }
+  console.log(sum, h / 2)
 </script>
 <script type='xxx' id="ch0105/21">
-
+  var N = Number(prompt('N:'))
+  var NN
+  var counter = 0
+   while (N != 1) {
+    counter = counter + 1
+    if (N % 2 != 0) {
+        NN = N * 3 + 1
+        console.log(N + '*3+1=' + NN)
+        N = NN
+      } else {
+        NN = N / 2
+        console.log(N + '/2=' + NN)
+        N = NN
+      }
+    }
+  console.log('End')
 </script>
-<script type='xxx' id="ch0105/22">
-
+<script xtype='xxx' id="ch0105/22">
+  var counter = 0
+  var left = 0
+  var cost = 0
+  var give = 0
+  var give_sum = 0
+  while (counter < 12) {
+    counter = counter + 1
+    left = left + 300
+    cost = Number(prompt('cost:'))
+    if (left < cost) {
+      break
+    }
+    left = left - cost
+    if (left >= 300) {
+      give = 300
+      give_sum = give_sum + give
+    }
+    else if (left >= 200) {
+      give = 200
+      give_sum = give_sum + give
+    } else if (left >= 100) {
+      give = 100
+      give_sum = give_sum + give
+    }
+    left = left - give
+    give = 0
+  }
+  if (counter < 12) {
+    console.log('-' + counter)
+  }
+  if (counter == 12) {
+    console.log(give_sum * 1.2 + left)
+  }
 </script>
 <script type='xxx' id="ch0105/23">
 
