@@ -589,7 +589,6 @@
 </script>
 <script type='xxx' id="ch0105/11">
   var k = Number(prompt('k:'))
-  var sum = 0
   var x = 0
   time_1 = 0
   time_5 = 0
@@ -599,11 +598,9 @@
     x = x + 1
     if (num == 1) {
       time_1 = time_1 + 1
-    }
-    if (num == 5) {
+    } else if (num == 5) {
       time_5 = time_5 + 1
-    }
-    if (num == 10) {
+    } else if (num == 10) {
       time_10 = time_10 + 1
     }
   }
@@ -613,7 +610,7 @@
   var N = Number(prompt('N:'))
   var m = Number(prompt('m:'))
   var x = 0
-  var flag =0
+  var flag = 0
   while (x < N) {
     var num = Number(prompt('num:'))
     x = x + 1
@@ -723,7 +720,6 @@
   var h = Number(prompt('h:'))
   var counter = 1
   var sum = h
-
   while (counter < 10) {
     counter = counter + 1
     h = h / 2
@@ -735,9 +731,9 @@
   var N = Number(prompt('N:'))
   var NN
   var counter = 0
-   while (N != 1) {
+   while (N !== 1) {
     counter = counter + 1
-    if (N % 2 != 0) {
+    if (N % 2 !== 0) {
         NN = N * 3 + 1
         console.log(N + '*3+1=' + NN)
         N = NN
@@ -823,49 +819,140 @@
   }
   console.log(time)
 </script>
-<script xtype='xxx' id="ch0105/25">
-  var x = 90
-  var seven1_2
-  var seven3
-  var nine1_2
-  var nine3
-  var seven_hundred
-  var seven_ten
-  var nine_hunedred
-  var nine_ten
-  do {
-    var seven1_2 = Math.trunc(x / 7)
-    var seven3 = x % 7
-    var nine1_2 = Math.trunc(x / 9)
-    var nine3 = x % 9
-    var seven_hundred = Math.trunc(seven1_2 / 10)
-    var seven_ten = seven1_2 % 10
-    var nine_hundred = Math.trunc(nine1_2 / 10)
-    var nine_ten = nine1_2 % 10
-    x = x + 1
-    if (seven_hundred == nine3 && seven_ten == nine_ten && seven3 == nine_hundred) {
+<script type='xxx' id="ch0105/25">
+  for (var i = 100; i <= 7 ** 3 - 1; i++) {
+    var a7 = i % 7// 7进制右数一位
+    var b7 = (i - a7) / 7 % 7// 7进制右数两位
+    var c7 = (i - a7 - b7 * 7) / 7 / 7 % 7// 7进制右数三位
+    var a9 = i % 9// 9进制右数一位
+    var b9 = (i - a9) / 9 % 9// 9进制右数两位
+    var c9 = (i - a9 - b9 * 9) / 9 / 9 % 9// 9进制右数三位
+    if (a7 == c9 && b7 == b9 && c7 == a9) {
+      console.log(i, '' + c7 + b7 + a7, '' + c9 + b9 + a9)
       break
     }
   }
-  while (x > 0)
+  /*
+  debugger
+  var x = 0
+  var seven_single = 0
+  var seven_hundred = 0
+  var seven_ten = 0
+  while (seven_hundred < 7) {
+    while (seven_ten < 6) {
+      while (seven_single < 6) {
+        if (x == seven_hundred + seven_ten * 9 + seven_single * 9 * 9 && x != 0) {
+          break
+        }
+        x = x + 1
+        seven_single = seven_single + 1
+        console.log(x)
+        console.log(seven_hundred.toString() + seven_ten.toString() + seven_single.toString())
+      }
+      if (x == seven_hundred + seven_ten * 9 + seven_single * 9 * 9 && x != 0) {
+        break
+      }
+      x = x + 1
+      seven_single = 0
+      seven_ten = seven_ten + 1
+      console.log(x)
+      console.log(seven_hundred.toString() + seven_ten.toString() + seven_single.toString())
+    } if (x == seven_hundred + seven_ten * 9 + seven_single * 9 * 9 && x != 0) {
+      break
+    }
+    while (seven_ten == 6) {
+      while (seven_single < 6) {
+        if (x == seven_hundred + seven_ten * 9 + seven_single * 9 * 9 && x != 0) {
+          break
+        }
+        x = x + 1
+        seven_single = seven_single + 1
+        console.log(x)
+        console.log(seven_hundred.toString() + seven_ten.toString() + seven_single.toString())
+      }
+      if (x == seven_hundred + seven_ten * 9 + seven_single * 9 * 9 && x != 0) {
+        break
+      }
+      x = x + 1
+      seven_single = 0
+      seven_ten = seven_ten + 1
+      console.log(x)
+      console.log(seven_hundred.toString() + seven_ten.toString() + seven_single.toString())
+    }
+    x = x + 1
+    seven_ten = 0
+    seven_single = 0
+    seven_hundred = seven_hundred + 1
+    console.log(x)
+    console.log(seven_hundred.toString() + seven_ten.toString() + seven_single.toString())
+  }
   console.log(x)
-  console.log(seven_hundred.toString()+seven_ten.toString()+seven3.toString())
-  console.log(nine_hundred.toString()+nine_ten.toString()+nine3.toString())
+  console.log(seven_hundred.toString() + seven_ten.toString() + seven_single.toString())
+  */
 </script>
 <script type='xxx' id="ch0105/26">
-
+  var n = Number(prompt())
+  var count = 0
+  for (var i = 0; i < n; i++) {
+    var x = Number(prompt())
+    var a = i % 10
+    var b = (i - a) / 10 % 10
+    var c = (i - a - b * 10) / 10 / 10 % 10
+    var d = (i - a - b * 10 - c * 100) / 10 / 10 / 10 % 10
+    if (a - d - c - b > 0) {
+      count++
+    }
+  }
+  console.log(count)
 </script>
 <script type='xxx' id="ch0105/27">
-
+  var k = Number(prompt())
+  var sum = 0
+  for (var i = 1; ; i++) {
+    sum += 1 / i
+    if (sum > k) {
+      break
+    }
+  }
+  console.log(i)
 </script>
 <script type='xxx' id="ch0105/28">
-
+  var n = Number(prompt())
+  while (n > 0) {
+    var d = n % 10
+    console.log(d)
+    n = (n - d) / 10
+  }
 </script>
 <script type='xxx' id="ch0105/29">
-
+  var n = Number(prompt())
+  var r = 0
+  var d = 0
+  var sign = Math.sign(n)
+  n = n * sign
+  while (n > 0) {
+    d = n % 10
+    n = (n - d) / 10
+    r = r * 10 + d
+  }
+  console.log(r * sign)
 </script>
-<script type='xxx' id="ch0105/30">
-
+<script xtype='xxx' id="ch0105/30">
+  var m = Number(prompt())
+  var k = Number(prompt())
+  var count3 = 0
+  while (m > 0) {
+    var d = m % 10
+    if (d == 3) {
+      count3++
+    }
+    m = (m - d) / 10
+  }
+  if (count3 == k) {
+    console.log('YES')
+  } else {
+    console.log('NO')
+  }
 </script>
 <script type='xxx' id="ch0105/31">
 
