@@ -890,15 +890,15 @@
   console.log(seven_hundred.toString() + seven_ten.toString() + seven_single.toString())
   */
 </script>
-<script type='xxx' id="ch0105/26">
+<script 1type='xxx' id="ch0105/26">
   var n = Number(prompt())
   var count = 0
   for (var i = 0; i < n; i++) {
     var x = Number(prompt())
-    var a = i % 10
-    var b = (i - a) / 10 % 10
-    var c = (i - a - b * 10) / 10 / 10 % 10
-    var d = (i - a - b * 10 - c * 100) / 10 / 10 / 10 % 10
+    var a = x % 10
+    var b = (x - a) / 10 % 10
+    var c = (x - a - b * 10) / 10 / 10 % 10
+    var d = (x - a - b * 10 - c * 100) / 10 / 10 / 10 % 10
     if (a - d - c - b > 0) {
       count++
     }
@@ -937,7 +937,7 @@
   }
   console.log(r * sign)
 </script>
-<script xtype='xxx' id="ch0105/30">
+<script type='xxx' id="ch0105/30">
   var m = Number(prompt())
   var k = Number(prompt())
   var count3 = 0
