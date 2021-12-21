@@ -143,7 +143,7 @@
       return false
     }
   }
-  for (i = 0; i < 1000; i++) {
+  for (i = 1; i < 1000; i++) {
     if (isComplete(i)) {
       console.log(i)
     }
@@ -183,8 +183,8 @@
     }
   }
 </script>
-<script type='xxx' id="itoa">
-  function itoa(n) {
+<script type='xxx' id="itob">
+  function itob(n) {
     var x = 0
     var y = n
     var sum = ''
@@ -228,7 +228,7 @@
     return sum
   }
   var n = +prompt()
-  console.log(itoa(n))
+  console.log(itob(n))
 </script>
 <script xtype='xxx' id="lcf&lcm">
   function lcf(n, m) {
@@ -286,7 +286,6 @@
   }
   var n = +prompt()
   console.log(sqrt(n).toFixed(3))
-  console.log(Math.sqrt(n))
 </script>
 <script type='xxx' id="ch0103/01">
   var a = Number(prompt('a:'))
