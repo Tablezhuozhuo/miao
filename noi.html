@@ -1,3 +1,196 @@
+<script type='xxx' id="narcissistic">
+  debugger
+  function isNarcissistic(n) {
+    var x = 0
+    var y = n
+    var sum = 0
+    var z = 0
+    for (var i = 1; i <= n; i++) {
+      x = Math.ceil(y / (10 ** i) % 10)
+      y = y - n % (10 ** (i + 1))
+      z = i
+      if (x < 1) {
+        break
+      }
+    }
+    x = 0
+    y = n
+    for (var j = 0; j < z; j++) {
+      x = Math.ceil(y / (10 ** j) % 10)
+      y = y - n % (10 ** (j + 1))
+      sum += x ** z
+    }
+    if (sum == n) {
+      return true
+    } else {
+      return false
+    }
+  }
+  var n = +prompt()
+  if (isNarcissistic(n)) {
+    console.log('YES')
+  } else {
+    console.log('NO')
+  }
+</script>
+<script type='xxx' id="narcissistics">
+  function isNarcissistic(n) {
+    var x = 0
+    var y = n
+    var sum = 0
+    var z = 0
+    for (var i = 1; i <= n; i++) {
+      x = Math.ceil(y / (10 ** i) % 10)
+      y = y - n % (10 ** (i + 1))
+      z = i
+      if (x < 1) {
+        break
+      }
+    }
+    x = 0
+    y = n
+    for (var j = 0; j < z; j++) {
+      x = Math.ceil(y / (10 ** j) % 10)
+      y = y - n % (10 ** (j + 1))
+      sum += x ** z
+    }
+    if (sum == n) {
+      return true
+    } else {
+      return false
+    }
+  }
+  for (i = 2; i < 10000; i++) {
+    if (isNarcissistic(i)) {
+      console.log(i)
+    }
+  }
+  // var single = n % 10
+  // var ten = (n - single) / 10 % 10
+  // var hundred = (n - single - ten * 10) / 100 % 10
+  // if (n == single ** 3 + ten ** 3 + hundred ** 3 && n > 100 && n <= 999) {
+  //   console.log('YES')
+  // } else {
+  //   console.log('NO')
+  // }
+</script>
+<script xtype='xxx' id="palindrom">
+  function reverseNumber(n) {
+    var x = 0
+    var y = n
+    var sum = ''
+    for (var i = 0; i < n; i++) {
+      x = Math.ceil(y / (10 ** i) % 10)
+      y = y - n % (10 ** (i + 1))
+      if (x < 1) {
+        break
+      }
+      sum += x
+    } return Number(sum)
+  }
+  function isPalindrom(n) {
+    if (reverseNumber(n) == n) {
+      return true
+    }
+    return false
+  }
+  var n = +prompt()
+  if (isPalindrom(n)) {
+    console.log('YES')
+  } else {
+    console.log('NO')
+  }
+</script>
+<script xtype='xxx' id="weekday">
+  function Weekday(year, month) {
+
+
+  }
+
+</script>
+<script type='xxx' id="complete-number">
+  function isComplete(n) {
+    var sum = 0
+    for (var i = 1; i < n; i++) {
+      if (n % i == 0) {
+        sum += i
+      }
+    }
+    if (sum == n) {
+      return true
+    } else {
+      return false
+    }
+  }
+  var n = +prompt()
+  if (isComplete(n)) {
+    console.log('YES')
+  } else {
+    console.log('NO')
+  }
+</script>
+<script type='xxx' id="complete-numbers">
+  function isComplete(n) {
+    var sum = 0
+    for (var i = 1; i < n; i++) {
+      if (n % i == 0) {
+        sum += i
+      }
+    }
+    if (sum == n) {
+      return true
+    } else {
+      return false
+    }
+  }
+  for (i = 0; i < 10000; i++) {
+    if (isComplete(i)) {
+      console.log(i)
+    }
+  }
+</script>
+<script type='xxx' id="prime">
+  function isPrime(n) {
+    for (i = 2; i <= n / 2; i++) {
+      if (n % i == 0) {
+        return false
+      }
+    }
+    return true
+  }
+  var n = +prompt()
+  if (isPrime(n)) {
+    console.log('YES')
+  } else {
+    console.log('NO')
+  }
+</script>
+<script type='xxx' id="primes">
+  function isPrime(n) {
+    for (i = 2; i <= n / 2; i++) {
+      if (n % i == 0) {
+        return false
+      }
+    }
+    return true
+  }
+  for (i = 0; i < 100; i++) {
+    if (isPrime(i)) {
+      console.log(i)
+    }
+  }
+</script>
+<script type='xxx' id="itoa">
+
+
+</script>
+<script type='xxx' id="lcf&lcm">
+
+</script>
+<script type='xxx' id="sqrt">
+
+
+</script>
 <script type='xxx' id="ch0103/01">
   var a = Number(prompt('a:'))
   var b = Number(prompt('b:'))
@@ -1030,8 +1223,19 @@
   }
   console.log(sum.toFixed(2))
 </script>
-<script xtype='xxx' id="ch0105/37">
-
+<script type='xxx' id="ch0105/37">
+  var M = Number(prompt())
+  var N = Number(prompt())
+  var X = Number(prompt())
+  while (true) {
+    X = X - Math.ceil(M / N)
+    if (M >= N)
+      X--
+    if (X < 0 || M < N)
+      break
+    N += Math.ceil(M / N)
+  }
+  console.log(N)
 </script>
 <script type='xxx' id="ch0105/38">
   var m = Number(prompt())
@@ -1105,7 +1309,7 @@
     }
     console.log(count)
 </script>
-<script xtype='xxx' id="ch0105/42">
+<script type='xxx' id="ch0105/42">
   var h = Number(prompt())
   var w = Number(prompt())
   var char = prompt()
