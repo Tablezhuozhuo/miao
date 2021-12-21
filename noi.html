@@ -149,7 +149,7 @@
     }
   }
 </script>
-<script xtype='xxx' id="prime">
+<script type='xxx' id="prime">
   debugger
   function isPrime(n) {
     for (i = 2; i <= n / 2; i++) {
@@ -184,15 +184,109 @@
   }
 </script>
 <script type='xxx' id="itoa">
-
-
+  function itoa(n) {
+    var x = 0
+    var y = n
+    var sum = ''
+    for (var i = 0; i < n; i++) {
+      x = Math.ceil(y / (10 ** i) % 10)
+      y = y - n % (10 ** (i + 1))
+      if (x < 1) {
+        break
+      }
+      if (x == 0) {
+        sum = '0' + sum
+      }
+      else if (x == 1) {
+        sum = '1' + sum
+      }
+      else if (x == 2) {
+        sum = '2' + sum
+      }
+      else if (x == 3) {
+        sum = '3' + sum
+      }
+      else if (x == 4) {
+        sum = '4' + sum
+      }
+      else if (x == 5) {
+        sum = '5' + sum
+      }
+      else if (x == 6) {
+        sum = '6' + sum
+      }
+      else if (x == 7) {
+        sum = '7' + sum
+      }
+      else if (x == 8) {
+        sum = '8' + sum
+      }
+      else if (x == 9) {
+        sum = '9' + sum
+      }
+    }
+    return sum
+  }
+  var n = +prompt()
+  console.log(itoa(n))
 </script>
-<script type='xxx' id="lcf&lcm">
-
+<script xtype='xxx' id="lcf&lcm">
+  function lcf(n, m) {
+    var x
+    var y
+    if (n > m) {
+      x = n
+      y = m
+    } else {
+      x = m
+      y = n
+    }
+    for (var i = 1; i <= x; i++) {
+      if (y % i == 0) {
+        if (x % (y / i) == 0) {
+          return (y / i)
+        }
+      }
+    }
+  }
+  function lcm(n, m) {
+    var x
+    var y
+    if (n > m) {
+      x = n
+      y = m
+    } else {
+      x = m
+      y = n
+    }
+    for (var i = 1; i <= x; i++) {
+      if ((x * i) % y == 0) {
+        return (x * i)
+      }
+    } return (x * y)
+  }
+  var n = +prompt()
+  var m = +prompt()
+  console.log(lcf(n, m), lcm(n, m))
 </script>
 <script type='xxx' id="sqrt">
-
-
+  function sqrt(n) {
+    var k
+    for (i = 0; i < n; i = i + 0.001) {
+      k = n - i * i
+      if (k <= 0) {
+        var z = n - (i - 0.001) * (i - 0.001)
+        if (z + k > 0) {
+          return (i)
+        } else {
+          return (i - 0.001)
+        }
+      }
+    }
+  }
+  var n = +prompt()
+  console.log(sqrt(n).toFixed(3))
+  console.log(Math.sqrt(n))
 </script>
 <script type='xxx' id="ch0103/01">
   var a = Number(prompt('a:'))
