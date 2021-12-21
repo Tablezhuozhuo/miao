@@ -169,10 +169,13 @@
     console.log('NO')
   }
 </script>
-<script type='xxx' id="primes">
+<script xtype='xxx' id="primes">
   function isPrime(n) {
     for (i = 2; i <= n / 2; i++) {
-      if (n % i == 0) {
+      if (n == 1) {
+        return false
+      }
+      else if (n % i == 0) {
         return false
       }
     }
