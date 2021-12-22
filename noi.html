@@ -1,31 +1,56 @@
 <script type='xxx' id="narcissistic">
   debugger
+  function digitWidth(n) {
+    var width = 0
+    do {
+      width++
+      x = n % 10
+      y = (n - x) / 10
+    }
+    while (n > 0)
+    return width
+  }
+  function power(x, n) {
+    var result = 1
+    for (var i = 0; i < n; i++) {
+      result *= x
+    }
+    return result
+  }
   function isNarcissistic(n) {
-    var x = 0
+    var w = digitWidth(n)
     var y = n
     var sum = 0
-    var z = 0
-    for (var i = 1; i <= n; i++) {
-      x = Math.ceil(y / (10 ** i) % 10)
-      y = y - n % (10 ** (i + 1))
-      z = i
-      if (x < 1) {
-        break
-      }
+    while (y > 0) {
+      var x = y % 10
+      sum += power(x, w)
+      y = (y - x) / 10
     }
-    x = 0
-    y = n
-    for (var j = 0; j < z; j++) {
-      x = Math.ceil(y / (10 ** j) % 10)
-      y = y - n % (10 ** (j + 1))
-      sum += x ** z
-    }
-    if (sum == n) {
-      return true
-    } else {
-      return false
-    }
+    return sum == n
   }
+  //   function isNarcissistic(n) {
+  //     var w = digitWidth(n)
+  //     var x = 0
+  //     var y = n
+  //     var sum = 0
+  //     var z = 0
+  //   for (var i = 1; i <= n; i++) {
+  //     x = Math.ceil(y / (10 ** i) % 10)
+  //     y = y - n % (10 ** (i + 1))
+  //     z = i
+  //     if (x < 1) {
+  //       break
+  //     }
+  //   }
+  //   x = 0
+  //   y = n
+  //   for (var j = 0; j < z; j++) {
+  //     x = Math.ceil(y / (10 ** j) % 10)
+  //     y = y - n % (10 ** (j + 1))
+  //     sum += x ** z
+  //   }
+  //   return sum == n
+  // }
   var n = +prompt()
   if (isNarcissistic(n)) {
     console.log('YES')
@@ -34,31 +59,33 @@
   }
 </script>
 <script type='xxx' id="narcissistics">
+  function digitWidth(n) {
+    var width = 0
+    do {
+      width++
+      x = n % 10
+      y = (n - x) / 10
+    }
+    while (n > 0)
+    return width
+  }
+  function power(x, n) {
+    var result = 1
+    for (var i = 0; i < n; i++) {
+      result *= x
+    }
+    return result
+  }
   function isNarcissistic(n) {
-    var x = 0
+    var w = digitWidth(n)
     var y = n
     var sum = 0
-    var z = 0
-    for (var i = 1; i <= n; i++) {
-      x = Math.ceil(y / (10 ** i) % 10)
-      y = y - n % (10 ** (i + 1))
-      z = i
-      if (x < 1) {
-        break
-      }
+    while (y > 0) {
+      var x = y % 10
+      sum += power(x, w)
+      y = (y - x) / 10
     }
-    x = 0
-    y = n
-    for (var j = 0; j < z; j++) {
-      x = Math.ceil(y / (10 ** j) % 10)
-      y = y - n % (10 ** (j + 1))
-      sum += x ** z
-    }
-    if (sum == n) {
-      return true
-    } else {
-      return false
-    }
+    return sum == n
   }
   for (i = 2; i < 1000; i++) {
     if (isNarcissistic(i)) {
@@ -75,24 +102,40 @@
   // }
 </script>
 <script type='xxx' id="palindrom">
-  function reverseNumber(n) {
-    var x = 0
-    var y = n
-    var sum = ''
-    for (var i = 0; i < n; i++) {
-      x = Math.ceil(y / (10 ** i) % 10)
-      y = y - n % (10 ** (i + 1))
-      if (x < 1) {
-        break
-      }
-      sum += x
-    } return Number(sum)
-  }
+  // function reverseNumber(n) {
+  //   var x = 0
+  //   var y = n
+  //   var sum = ''
+  //   for (var i = 0; i < n; i++) {
+  //     x = Math.ceil(y / (10 ** i) % 10)
+  //     y = y - n % (10 ** (i + 1))
+  //     if (x < 1) {
+  //       break
+  //     }
+  //     sum += x
+  //   } return Number(sum)
+  // }
+  // function isPalindrom(n) {
+  //   if (reverseNumber(n) == n) {
+  //     return true
+  //   }
+  //   return false
+  // }
+  // var n = +prompt()
+  // if (isPalindrom(n)) {
+  //   console.log('YES')
+  // } else {
+  //   console.log('NO')
+  // }
   function isPalindrom(n) {
-    if (reverseNumber(n) == n) {
-      return true
+    var m = n
+    var reverse = 0
+    while (m > 0) {
+      var digit = m % 10
+      m = (m - digit) / 10
+      reverse = reverse * 10 + digit
     }
-    return false
+    return (reverse == n)
   }
   var n = +prompt()
   if (isPalindrom(n)) {
@@ -108,29 +151,31 @@
   }
 
 </script>
-<script type='xxx' id="complete-number">
-  function isComplete(n) {
-    var sum = 0
-    for (var i = 1; i < n; i++) {
+<script xtype='xxx' id="complete-number">
+  debugger
+  function isCompleteNumber(n) {
+    var sum = 1
+    var stop = Math.sqrt(n)
+    for (var i = 2; i < stop; i++) {
       if (n % i == 0) {
-        sum += i
+        var m = n / i
+        sum += i + m
       }
     }
-    if (sum == n) {
-      return true
-    } else {
-      return false
+    if (stop == Math.trunc(stop)) {
+      sum += stop
     }
+    return sum == n
   }
   var n = +prompt()
-  if (isComplete(n)) {
+  if (isCompleteNumber(n)) {
     console.log('YES')
   } else {
     console.log('NO')
   }
 </script>
 <script type='xxx' id="complete-numbers">
-  function isComplete(n) {
+  function isCompleteNumber(n) {
     var sum = 0
     for (var i = 1; i < n; i++) {
       if (n % i == 0) {
@@ -144,23 +189,25 @@
     }
   }
   for (i = 1; i < 1000; i++) {
-    if (isComplete(i)) {
+    if (isCompleteNumber(i)) {
       console.log(i)
     }
   }
 </script>
-<script xtype='xxx' id="prime">
+<script type='xxx' id="prime">
   debugger
   function isPrime(n) {
-    for (i = 2; i <= n / 2; i++) {
-      if (n == 1) {
-        return false
-      }
-      else if (n % i == 0) {
-        return false
-      }
+    if (n == 1) {
+      return false
     }
-    return true
+    else if (n == 2) {
+      return true
+    }
+    for (var i = 2; i < n; i++) {
+      if (n % i == 0) {
+        return false
+      }
+    } return true
   }
   var n = +prompt()
   if (isPrime(n)) {
@@ -169,72 +216,116 @@
     console.log('NO')
   }
 </script>
-<script xtype='xxx' id="primes">
+<script type='xxx' id="primes">
+  debugger
   function isPrime(n) {
-    for (i = 2; i <= n / 2; i++) {
-      if (n == 1) {
-        return false
-      }
-      else if (n % i == 0) {
-        return false
-      }
+    if (n == 1) {
+      return false
     }
-    return true
+    else if (n == 2) {
+      return true
+    }
+    for (var i = 2; i < n; i++) {
+      if (n % i == 0) {
+        return false
+      }
+    } return true
   }
-  for (i = 0; i < 100; i++) {
+  for (i = 1; i < 100; i++) {
     if (isPrime(i)) {
       console.log(i)
     }
   }
 </script>
 <script type='xxx' id="itob">
+  debugger
+  function digitToChar(n) {
+    if (n == 1) {
+      return '1'
+    }
+    if (n == 2) {
+      return '2'
+    }
+    if (n == 3) {
+      return '3'
+    }
+    if (n == 4) {
+      return '4'
+    }
+    if (n == 5) {
+      return '5'
+    }
+    if (n == 6) {
+      return '6'
+    }
+    if (n == 7) {
+      return '7'
+    }
+    if (n == 8) {
+      return '8'
+    }
+    if (n == 9) {
+      return '9'
+    }
+    if (n == 0) {
+      return '0'
+    }
+  }
   function itob(n) {
-    var x = 0
-    var y = n
     var sum = ''
-    for (var i = 0; i < n; i++) {
+    var m = n
+    if (n < 0) {
+      m = -n
+    }
+    var x = 0
+    var y = m
+    for (var i = 0; i < m; i++) {
       x = Math.ceil(y / (10 ** i) % 10)
-      y = y - n % (10 ** (i + 1))
+      y = y - m % (10 ** (i + 1))
       if (x < 1) {
         break
       }
-      if (x == 0) {
-        sum = '0' + sum
-      }
-      else if (x == 1) {
-        sum = '1' + sum
-      }
-      else if (x == 2) {
-        sum = '2' + sum
-      }
-      else if (x == 3) {
-        sum = '3' + sum
-      }
-      else if (x == 4) {
-        sum = '4' + sum
-      }
-      else if (x == 5) {
-        sum = '5' + sum
-      }
-      else if (x == 6) {
-        sum = '6' + sum
-      }
-      else if (x == 7) {
-        sum = '7' + sum
-      }
-      else if (x == 8) {
-        sum = '8' + sum
-      }
-      else if (x == 9) {
-        sum = '9' + sum
-      }
+      sum = digitToChar(x) + sum
+      // if (x == 0) {
+      //   sum = '0' + sum
+      // }
+      // else if (x == 1) {
+      //   sum = '1' + sum
+      // }
+      // else if (x == 2) {
+      //   sum = '2' + sum
+      // }
+      // else if (x == 3) {
+      //   sum = '3' + sum
+      // }
+      // else if (x == 4) {
+      //   sum = '4' + sum
+      // }
+      // else if (x == 5) {
+      //   sum = '5' + sum
+      // }
+      // else if (x == 6) {
+      //   sum = '6' + sum
+      // }
+      // else if (x == 7) {
+      //   sum = '7' + sum
+      // }
+      // else if (x == 8) {
+      //   sum = '8' + sum
+      // }
+      // else if (x == 9) {
+      //   sum = '9' + sum
+      // }
     }
-    return sum
+    if (n > 0) { return sum }
+    {
+      return ('-' + sum)
+    }
   }
   var n = +prompt()
   console.log(itob(n))
 </script>
-<script xtype='xxx' id="lcf&lcm">
+<script type='xxx' id="lcf&lcm">
   function lcf(n, m) {
     var x
     var y
