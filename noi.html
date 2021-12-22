@@ -1,4 +1,4 @@
-<script xtype='xxx' id="narcissistic">
+<script type='xxx' id="narcissistic">
   debugger
   // function digitWidth(n) {
   //   var width = 0
@@ -57,7 +57,7 @@
     console.log('NO')
   }
 </script>
-<script xtype='xxx' id="narcissistics">
+<script type='xxx' id="narcissistics">
   function isNarcissistic(n) {
     var x = 0
     var y = n
@@ -138,11 +138,55 @@
   }
 </script>
 <script xtype='xxx' id="weekday">
-  function Weekday(year, month) {
-
-
+  function isLeapYear(n) {
+    if (n % 400 == 0) {
+      return true
+    }
+    if (n % 100 == 0) {
+      return false
+    }
+    if (n % 4 == 0) {
+      return true
+    }
+    return false
   }
-
+  function getMonthDay(year, month) {
+    switch (month) {
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        return 31
+      case 2:
+        if (isLeapYear(year)) {
+          return29
+        } else {
+          return 28
+        }
+      default: return 30
+    }
+  }
+  function Weekday(year, month) {
+    var day = (year - 1) * 365 + Math.floor((year - 1) / 4) - Math.floor((year - 1) / 100) + Math.floor((year - 1) / 400)
+    // for (var y = 1; y < year; y++) {
+    //   if (isLeapYear) {
+    //     day += 366
+    //   } else {
+    //     day += 365
+    //   }
+    // }
+    for (var m = 1; m < month; m++) {
+      day += getMonthDay(year, m)
+    }
+    day = (day + 1) % 7
+    return day
+  }
+  var year = +prompt()
+  var month = +prompt()
+  console.log(Weekday(year, month))
 </script>
 <script type='xxx' id="complete-number">
   debugger
@@ -357,7 +401,7 @@
   var m = +prompt()
   console.log(lcf(n, m), lcm(n, m))
 </script>
-<script xtype='xxx' id="sqrt">
+<script type='xxx' id="sqrt">
   // function sqrt(n) {
   //   var k
   //   for (i = 0; i < n; i = i + 0.001) {
