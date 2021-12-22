@@ -1,56 +1,55 @@
-<script type='xxx' id="narcissistic">
+<script xtype='xxx' id="narcissistic">
   debugger
-  function digitWidth(n) {
-    var width = 0
-    do {
-      width++
-      x = n % 10
-      y = (n - x) / 10
-    }
-    while (n > 0)
-    return width
-  }
-  function power(x, n) {
-    var result = 1
-    for (var i = 0; i < n; i++) {
-      result *= x
-    }
-    return result
-  }
-  function isNarcissistic(n) {
-    var w = digitWidth(n)
-    var y = n
-    var sum = 0
-    while (y > 0) {
-      var x = y % 10
-      sum += power(x, w)
-      y = (y - x) / 10
-    }
-    return sum == n
-  }
-  //   function isNarcissistic(n) {
-  //     var w = digitWidth(n)
-  //     var x = 0
-  //     var y = n
-  //     var sum = 0
-  //     var z = 0
-  //   for (var i = 1; i <= n; i++) {
-  //     x = Math.ceil(y / (10 ** i) % 10)
-  //     y = y - n % (10 ** (i + 1))
-  //     z = i
-  //     if (x < 1) {
-  //       break
-  //     }
+  // function digitWidth(n) {
+  //   var width = 0
+  //   do {
+  //     width++
+  //     x = n % 10
+  //     y = (n - x) / 10
   //   }
-  //   x = 0
-  //   y = n
-  //   for (var j = 0; j < z; j++) {
-  //     x = Math.ceil(y / (10 ** j) % 10)
-  //     y = y - n % (10 ** (j + 1))
-  //     sum += x ** z
+  //   while (n > 0)
+  //   return width
+  // }
+  // function power(x, n) {
+  //   var result = 1
+  //   for (var i = 0; i < n; i++) {
+  //     result *= x
+  //   }
+  //   return result
+  // }
+  // function isNarcissistic(n) {
+  //   var w = digitWidth(n)
+  //   var y = n
+  //   var sum = 0
+  //   while (y > 0) {
+  //     var x = y % 10
+  //     sum += power(x, w)
+  //     y = (y - x) / 10
   //   }
   //   return sum == n
   // }
+  function isNarcissistic(n) {
+    var x = 0
+    var y = n
+    var sum = 0
+    var z = 0
+    for (var i = 1; i <= n; i++) {
+      x = Math.ceil(y / (10 ** i) % 10)
+      y = y - n % (10 ** (i + 1))
+      z = i
+      if (x < 1) {
+        break
+      }
+    }
+    x = 0
+    y = n
+    for (var j = 0; j < z; j++) {
+      x = Math.ceil(y / (10 ** j) % 10)
+      y = y - n % (10 ** (j + 1))
+      sum += x ** z
+    }
+    return sum == n
+  }
   var n = +prompt()
   if (isNarcissistic(n)) {
     console.log('YES')
@@ -58,32 +57,26 @@
     console.log('NO')
   }
 </script>
-<script type='xxx' id="narcissistics">
-  function digitWidth(n) {
-    var width = 0
-    do {
-      width++
-      x = n % 10
-      y = (n - x) / 10
-    }
-    while (n > 0)
-    return width
-  }
-  function power(x, n) {
-    var result = 1
-    for (var i = 0; i < n; i++) {
-      result *= x
-    }
-    return result
-  }
+<script xtype='xxx' id="narcissistics">
   function isNarcissistic(n) {
-    var w = digitWidth(n)
+    var x = 0
     var y = n
     var sum = 0
-    while (y > 0) {
-      var x = y % 10
-      sum += power(x, w)
-      y = (y - x) / 10
+    var z = 0
+    for (var i = 1; i <= n; i++) {
+      x = Math.ceil(y / (10 ** i) % 10)
+      y = y - n % (10 ** (i + 1))
+      z = i
+      if (x < 1) {
+        break
+      }
+    }
+    x = 0
+    y = n
+    for (var j = 0; j < z; j++) {
+      x = Math.ceil(y / (10 ** j) % 10)
+      y = y - n % (10 ** (j + 1))
+      sum += x ** z
     }
     return sum == n
   }
@@ -151,7 +144,7 @@
   }
 
 </script>
-<script xtype='xxx' id="complete-number">
+<script type='xxx' id="complete-number">
   debugger
   function isCompleteNumber(n) {
     var sum = 1
@@ -364,20 +357,46 @@
   var m = +prompt()
   console.log(lcf(n, m), lcm(n, m))
 </script>
-<script type='xxx' id="sqrt">
+<script xtype='xxx' id="sqrt">
+  // function sqrt(n) {
+  //   var k
+  //   for (i = 0; i < n; i = i + 0.001) {
+  //     k = n - i * i
+  //     if (k <= 0) {
+  //       var z = n - (i - 0.001) * (i - 0.001)
+  //       if (z + k > 0) {
+  //         return (i)
+  //       } else {
+  //         return (i - 0.001)
+  //       }
+  //     }
+  //   }
+  // }
+  // function sqrt(n) {
+  //   var right
+  //   var left
+  //   var mid
+  //   do {
+  //     var mid = (left + right) / 2
+  //     if (mid ** mid < n) {
+  //       left = mid
+  //     } else if (mid * mid > n) {
+  //       right = mid
+  //     } else {
+  //       return mid
+  //     }
+  //   }
+  //   while (Math.abs(mid * mid - n) > 0.00000001)
+  //   return mid
+  // }
+  // var n = +prompt()
+  // console.log(sqrt(n).toFixed(3))
   function sqrt(n) {
-    var k
-    for (i = 0; i < n; i = i + 0.001) {
-      k = n - i * i
-      if (k <= 0) {
-        var z = n - (i - 0.001) * (i - 0.001)
-        if (z + k > 0) {
-          return (i)
-        } else {
-          return (i - 0.001)
-        }
-      }
+    var x = n
+    while (Math.abs(x * x - n) > 0.0000001) {
+      x = x / 2 + n / 2 / x
     }
+    return x
   }
   var n = +prompt()
   console.log(sqrt(n).toFixed(3))
