@@ -113,32 +113,40 @@
     }
   }
   // 圆
-  // function circle(cx, cy, r) {
-  //   var x = 0
-  //   var y = r
-  //   dot(x, y)
-  //   x++
-  //   var a = x * x + y * y
-  //   var b = x * x + (y - 1) * (y - 1)
-  //   if (x * x + y * y) {
-
-  //   }
-  //   for () {
-
-  //   }
+  function circle(cx, cy, r) {
+    var x = 0
+    var y = r
+    while (x < y) {
+      x++
+      var a = x * x + y * y
+      var b = x * x + (y - 1) * (y - 1)
+      if (Math.abs(a - r*r) > Math.abs(b - r * r)) {
+        y = y - 1
+      }
+      dot(x+cx, y+cy)
+      dot(-x+cx, -y+cy)
+      dot(x+cx, -y+cy)
+      dot(-x+cx, y+cy)
+      dot(y+cx, x+cy)
+      dot(-y+cx, -x+cy)
+      dot(y+cx, -x+cy)
+      dot(-y+cx, x+cy)
+    }
+  }
+  circle(100, 200, 50)
+  circle(200, 200, 200)
+  // for (j = 0; j <= 360; j++) {
+  //   dot(50 * Math.sin(j) + 200, 50 * Math.cos(j) + 200)
   // }
-
-  for (j = 0; j <= 360; j++) {
-    dot(50 * Math.sin(j) + 200, 50 * Math.cos(j) + 200)
-  }
-  for (j = 0; j <= 360; j++) {
-    dot(200 * Math.sin(j) + 200, 200 * Math.cos(j) + 200)
-  }
+  // for (j = 0; j <= 360; j++) {
+  //   dot(200 * Math.sin(j) + 200, 200 * Math.cos(j) + 200)
+  // }
   for (i = 0; i <= 100; i += 0.5) {
     for (j = 0; j <= 3600; j++) {
       dot(i * Math.sin(j) + 300, i * Math.cos(j) + 300)
     }
   }
+  //sin(x)
   for (i = 0; i <= 100; i += 0.05) {
     dot(20 * i, 20 * Math.sin(i) + 30)
   }
@@ -161,5 +169,4 @@
   }
 
 </script>
-
 </html>
