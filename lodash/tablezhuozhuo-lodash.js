@@ -43,7 +43,7 @@ var tablezhuozhuo = {
     }
     return array
   },
-  dropRight: function (array, n ) {
+  dropRight: function (array, n) {
     if (n == undefined) {
       n = 1
     }
@@ -59,4 +59,42 @@ var tablezhuozhuo = {
     }
     return array
   },
-}
+  dropRightWhile: function (array, [predicate = _.identity]) {
+
+  },
+  dropWhile: function (array, [predicate = _.identity]) { },
+  fill: function (array, value, start, end) {
+    var start = start || 0
+    var l = array.length
+    var end = end || l
+    for (var i = 0; i < l; i++) {
+      if (i >= start && i < end) {
+        array[i] = value
+      }
+    }
+    return array
+  },
+  findIndex: function (array, [predicate = _.identity], [fromIndex = 0]) {
+
+  },
+
+  findLastIndex: function (array, [predicate = _.identity], [fromIndex = array.length - 1]) {
+
+  },
+  flatten: function (array) {
+    result = []
+    for (var i = 0; i < array.length; i++) {
+      l = array[i].length
+      if (l) {
+        for (var j = 0; j < l; j++) {
+          result.push(array[i][j])
+        }
+      }
+      else { result.push(array[i])}
+    }
+    return result
+  },
+  flattenDeep: function (array) {
+
+  },
+},
