@@ -94,7 +94,5 @@ var tablezhuozhuo = {
     }
     return result
   },
-  flattenDeep: function (array) {
 
-  },
 }
