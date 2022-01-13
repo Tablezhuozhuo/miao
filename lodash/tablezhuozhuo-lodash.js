@@ -81,18 +81,122 @@ var tablezhuozhuo = {
   findLastIndex: function (array, [predicate = _.identity], [fromIndex = array.length - 1]) {
 
   },
+  // flatten: function (array) {
+  //   var result = []
+  //   for (var i = 0; i < array.length; i++) {
+  //     l = array[i].length
+  //     if (l) {
+  //       for (var j = 0; j < l; j++) {
+  //         result.push(array[i][j])
+  //       }
+  //     }
+  //     else { result.push(array[i]) }
+  //   }
+  //   return result
+  // },
+
+  // flatten: function (array) {
+  //   var result = []
+  //   for (var i = 0; i < array.length; i++) {
+  //     var item = ary[i]
+  //     if (Array.isArray(item)) {
+  //      result.push(...item)
+  //     }
+  //     else { result.push(item)
+  //     }
+  //   }
+  //   return result
+  // },
+
   flatten: function (array) {
-    result = []
-    for (var i = 0; i < array.length; i++) {
-      l = array[i].length
-      if (l) {
-        for (var j = 0; j < l; j++) {
-          result.push(array[i][j])
-        }
+    return array.reduce((result, item) => {
+      if (Array.isArray(item)) {
+        result.push(...item)
       }
-      else { result.push(array[i]) }
-    }
-    return result
+      else {
+        result.push(item)
+      } return result
+    }, [])
   },
+
+  // flatten: function (array) {
+  //   return array.reduce((result, item) => {
+  //    return result.concat(item)
+  //   }, [])
+  // },
+
+  // flatten: function (array) {
+  //   return [].concat(...array)
+  // },
+
+  // flatten: function (array) {
+  //   return [].apply([], array)
+  // },
+
+  // flattenDeep: function (array) {
+  //   var result = []
+  //   for (var i = 0; i < array.length; i++) {
+  //     var item = array[i]
+  //     if (Array.isArray(item)) {
+  //       result.push(...flattenDeep(item))
+  //     }
+  //     else { result.push(item) }
+  //   }
+  //   return result
+  // },
+
+  flattenDeep: function (array) {
+    return array.reduce((result, item) => {
+      if (Array.isArray(item)) {
+        return result.concat(flattenDeep(item))
+      }
+      return result.concat(item)
+    }, [])
+  },
+
+  // flattenDeep: function (array) {
+  //   var result = []
+  //   for (var i = 0; i < array.length; i++) {
+  //     var item = array[i]
+  //     if (Array.isArray(item)) {
+  //       item = flattenDeep(item)
+  //       for (var j = 0; j < item.length; j++) {
+  //         result.push(item[j])
+  //       }
+  //     }
+  //     else { result.push(item) }
+  //   }
+  //   return result
+  // },
+
+
+  // flattenDeep: function (array) {
+  //   var result = []
+  //   for (var i = 0; i < array.length; i++) {
+  //     l = array[i].length
+  //     if (l) {
+  //       for (var j = 0; j < l; j++) {
+  //         result.push(flattenDeep(array[i])[j])
+  //       }
+  //     }
+  //     else { result.push(array[i]) }
+  //   }
+  //   return result
+  // },wrong
+
+  flattenDepth: function (array, depth = 1) {
+    if (n == 0) {
+      return ary.slice
+      // return Array.from(ary)
+      // return [...ary]
+    }
+    return array.reduce((result, item) => {
+      if (Array.isArray(item)) {
+        return result.concat(flattenDepth(item, n - 1))
+      }
+      return result.concat(item)
+    }, [])
+  },
+
 
 }
