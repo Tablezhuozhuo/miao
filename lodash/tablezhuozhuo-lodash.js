@@ -82,7 +82,7 @@ var tablezhuozhuo = {
 
   },
   flatten: function (array) {
-    result = []
+     result = []
     for (var i = 0; i < array.length; i++) {
       l = array[i].length
       if (l) {
@@ -90,11 +90,24 @@ var tablezhuozhuo = {
           result.push(array[i][j])
         }
       }
-      else { result.push(array[i])}
+      else { result.push(array[i]) }
     }
     return result
   },
   flattenDeep: function (array) {
+    result = []
+    if () {
 
+    }
+    for (var i = 0; i < array.length; i++) {
+      l = array[i].length
+      if (l) {
+        for (var j = 0; j < l; j++) {
+          result.push(array[i][j])
+        }
+      }
+      else { result.push(array[i]) }
+    }
+    return flattenDeep(result)
   },
-},
+}
