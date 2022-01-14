@@ -18,7 +18,7 @@ var tablezhuozhuo = {
     }
     return result
   },
-  difference: function (array, ...[values]) {
+  difference: function (array, ...values) {
 
   },
   differenceBy: function (array, [values]) {
@@ -197,6 +197,100 @@ var tablezhuozhuo = {
       return result.concat(item)
     }, [])
   },
+  fromPairs: function (pairs) {
+    var result = {}
+    for (var i = 0; i < pairs.length; i++) {
+      var pair = pairs[i]
+      result[pair[0]] = pair[1]
+    }
+    return result
+  },
+  head: function (array) {
+    if (array[0]) {
+      return array[0]
+    }
+  },
+  indexOf: function (array, value, fromIndex = 0) {
+    for (var i = fromIndex; i < array.length; i++) {
+      if (array[i] == value) {
+        return i
+      }
+    }
+    return -1
+  },
+  initial: function (array) {
+    return array.slice(0, -1)
+  },
+  intersection: function (...arrays) {
 
+  },
+  intersectionBy: function (...arrays, [iteratee = _.identity]) { },
+  intersectionWith: function (...arrays, [comparator]) { },
+  join: function (array, separator = ',') {
+    var str = ''
+    for (var i = 0; i < array.length - 1; i++) {
+      str += array[i]
+      str += separator
+    }
+    str += array[array.length - 1]
+    return str
+  },
+  last: function (array) {
+    return array[array.length - 1]
+  },
+  lastIndexOf: function (array, value, fromIndex = array.length - 1) {
+    for (var i = fromIndex; i >= 0; i--) {
+      if (array[i] == value) {
+        return i
+      }
+    }
+    return -1
+  },
+  nth: function (array, n = 0) {
+    if (n < 0) {
+      return array[array.length + n]
+    }
+    return array[n]
+  },
+  pull: function (array, ...values) {
+    for (var j = 0; j < values.length; j++) {
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] == values[j]) {
+          for (var k = i; k < array.length - 1; k++) {
+            array[k] = array[k + 1]
+          }
+          array.pop()
+        }
+      }
+    }
+    return array
+  },
+  pullAll: function (array, values) {
+    for (var j = 0; j < values.length; j++) {
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] == values[j]) {
+          for (var k = i; k < array.length - 1; k++) {
+            array[k] = array[k + 1]
+          }
+          array.pop()
+        }
+      }
+    }
+    return array
+  },
+  pullAllBy: function (array, values, [iteratee = _.identity]) {
 
+  },
+  pullAllWith: function (array, values, [comparator]) { },
+  reverse: function (array) {
+    for (var i = 0; i < array.length / 2; i++) {
+      var current = array[i]
+      array[i] = array[array.length - i - 1]
+      array[array.length - i - 1] = current
+    }
+    return array
+  },
+  sortedIndex: function (array, value) {
+
+  },
 }
