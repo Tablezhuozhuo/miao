@@ -185,14 +185,14 @@ var tablezhuozhuo = {
   // },wrong
 
   flattenDepth: function (array, depth = 1) {
-    if (n == 0) {
+    if (depth == 0) {
       return ary.slice
       // return Array.from(ary)
       // return [...ary]
     }
     return array.reduce((result, item) => {
       if (Array.isArray(item)) {
-        return result.concat(flattenDepth(item, n - 1))
+        return result.concat(flattenDepth(item, depth - 1))
       }
       return result.concat(item)
     }, [])
