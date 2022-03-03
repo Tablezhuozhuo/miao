@@ -12,14 +12,13 @@
       background-color: beige;
     }
 
-    .dot {
+    /* .dot {
       width: 8px;
       height: 8px;
       border-radius: 9999px;
       background-color: violet;
       position: absolute;
-    }
-
+    } */
     .svg-wrapper {
       border: 2px solid;
       display: inline-block;
@@ -34,7 +33,6 @@
       height: 20px;
       border: 2px solid gray;
       border-radius: 5px;
-
     }
   </style>
 </head>
@@ -43,32 +41,58 @@
   <input type="color" id="colorSelect" value="#000000">
   <input type="range" id="strokeWidthSelect" value="3" max="100" min="1" step="2">
   <hr>
-  <button onclick="tool='line'">线</button>
-  <button onclick="tool='rect'">框</button>
+  <button onclick="tool='line'">╲</button>
+  <button onclick="tool='rect'">▭</button>
+  <button onclick="tool='circle'">⬭</button>
+  <button onclick="tool='triangle'">△</button>
+  <button onclick="tool='Rounded Rectangle'">▢</button>
+  <button onclick="tool='right triangle'">◺</button>
+  <button onclick="tool='diamond'">◇</button>
+  <button onclick="tool='pentagon'">⭔</button>
+  <button onclick="tool='  '">⎔</button>
+  <button onclick="tool='  '">⇦</button>
+  <button onclick="tool='  '">⇧</button>
+  <button onclick="tool='  '">⇨</button>
+  <button onclick="tool='  '">⇩</button>
+  <button onclick="tool='  '">⎔</button>
+  <button onclick="tool='  '">✰</button>
+  <button onclick="tool='  '">♡</button>
+  <button onclick="tool='  '">✧</button>
+
 
   <div class="colors">
-    <button onclick="color='red'" style="background-color: red;"></button>
-    <button onclick="color='orange'" style="background-color: orange;"></button>
-    <button onclick="color='yellow'" style="background-color: yellow;"></button>
-    <button onclick="color='yellowgreen'" style="background-color: yellowgreen;"></button>
-    <button onclick="color='aquamarine'" style="background-color: aquamarine;"></button>
-    <button onclick="color='blue'" style="background-color: blue;"></button>
-    <button onclick="color='purple'" style="background-color: purple;"></button>
-    <button onclick="color='black'" style="background-color: black;"></button>
-    <button onclick="color='white'" style="background-color: white;"></button>
+    <button id='#000000' style="background-color: #000000;"></button>
+    <button id='#7f7f7f' style="background-color: #7f7f7f;"></button>
+    <button id='#880015' style="background-color: #880015;"></button>
+    <button id='#ed1c24' style="background-color: #ed1c24;"></button>
+    <button id='#ff7f27' style="background-color: #ff7f27;"></button>
+    <button id='#fff200' style="background-color: #fff200;"></button>
+    <button id='#22b14c' style="background-color: #22b14c;"></button>
+    <button id='#00a2e8' style="background-color: #00a2e8;"></button>
+    <button id='#3f48cc' style="background-color: #3f48cc;"></button>
+    <button id='#a349a4' style="background-color: #a349a4;"></button>
+    <br>
+    <button id='#ffffff' style="background-color: #ffffff;"></button>
+    <button id='#c3c3c3' style="background-color: #c3c3c3;"></button>
+    <button id='#b97a57' style="background-color: #b97a57;"></button>
+    <button id='#ffaec9' style="background-color: #ffaec9;"></button>
+    <button id='#ffc90e' style="background-color: #ffc90e;"></button>
+    <button id='#efe4b0' style="background-color: #efe4b0;"></button>
+    <button id='#b5e61d' style="background-color: #b5e61d;"></button>
+    <button id='#99d9ea' style="background-color: #99d9ea;"></button>
+    <button id='#7092be' style="background-color: #7092be;"></button>
+    <button id='#c8bfe7' style="background-color: #c8bfe7;"></button>
   </div>
   <div class="svg-wrapper">
-
     <svg width="500" height="500"></svg>
   </div>
   <script>
-
     var svg = document.querySelector('svg')
     var colorSelect = document.querySelector('#colorSelect')
-    var colorSelect2 = document.querySelector('.colors')
+    var colorSelect2 = document.querySelectorAll('.colors button')
     var lastX, lastY
     var node
-    var color
+    var color = colorSelect.value
     var tool = 'line'
     var startPos
     svg.addEventListener('mousedown', function (e) {
@@ -76,7 +100,6 @@
         var pos = mouse(svg)
         startPos = pos
         if (tool == 'line') {
-
           node = svgElt('path', {
             d: `M ${pos.x} ${pos.y} L ${pos.x} ${pos.y}`,
             stroke: colorSelect.value,
@@ -86,51 +109,91 @@
           })
           svg.appendChild(node)
         }
-        else if (tool == 'rect') {
+        if (tool == 'rect') {
           node = svgElt('rect', {
             x: pos.x,
             y: pos.y,
             stroke: colorSelect.value,
-            width:0,
-            height:0,
+            width: 0,
+            height: 0,
             'stroke-width': strokeWidthSelect.value,
             'stroke-linecap': 'round',
             fill: 'none',
           })
           svg.appendChild(node)
         }
-        if(color =='red'){
-          node.setAttribute('stroke', color)
+        if (tool == 'circle') {
+          node = svgElt('ellipse', {
+            cx: pos.x,
+            cy: pos.y,
+            rx: 0,
+            ry: 0,
+            stroke: colorSelect.value,
+            'stroke-width': strokeWidthSelect.value,
+            'stroke-linecap': 'round',
+            fill: 'none',
+          })
         }
-        if(color =='orange'){
-          node.setAttribute('stroke', color)
+        if (tool == 'triangle') {
+          node = svgElt('polygon', {
+            points: `${pos.x},${pos.y} ${pos.x},${pos.y} ${pos.x},${pos.y}`,
+            stroke: colorSelect.value,
+            'stroke-width': strokeWidthSelect.value,
+            'stroke-linecap': 'round',
+            fill: 'none',
+          })
         }
-        if(color =='yellow'){
-          node.setAttribute('stroke', color)
+        if (tool == 'Rounded Rectangle') {
+          node = svgElt('rect', {
+            x: pos.x,
+            y: pos.y,
+            stroke: colorSelect.value,
+            width: 0,
+            height: 0,
+            rx: 0,
+            'stroke-width': strokeWidthSelect.value,
+            'stroke-linecap': 'round',
+            fill: 'none',
+          })
         }
-        if(color =='yellowgreen'){
-          node.setAttribute('stroke', color)
+        if (tool == 'right triangle') {
+          node = svgElt('polygon', {
+            points: `${pos.x},${pos.y} ${pos.x},${pos.y} ${pos.x},${pos.y}`,
+            stroke: colorSelect.value,
+            'stroke-width': strokeWidthSelect.value,
+            'stroke-linecap': 'round',
+            fill: 'none',
+          })
         }
-        if(color =='aquamarine'){
-          node.setAttribute('stroke', color)
+        if (tool == 'diamond') {
+          node = svgElt('polygon', {
+            points: `${pos.x},${pos.y} ${pos.x},${pos.y} ${pos.x},${pos.y} ${pos.x},${pos.y}`,
+            stroke: colorSelect.value,
+            'stroke-width': strokeWidthSelect.value,
+            'stroke-linecap': 'round',
+            fill: 'none',
+          })
         }
-        if(color =='blue'){
-          node.setAttribute('stroke', color)
+        if (tool == 'pentagon') {
+          node = svgElt('polygon', {
+            points: `${pos.x},${pos.y} ${pos.x},${pos.y} ${pos.x},${pos.y} ${pos.x},${pos.y} ${pos.x},${pos.y}`,
+            stroke: colorSelect.value,
+            'stroke-width': strokeWidthSelect.value,
+            'stroke-linecap': 'round',
+            fill: 'none',
+          })
         }
-        if(color =='purple'){
-          node.setAttribute('stroke', color)
-        }
-        if(color =='black'){
-          node.setAttribute('stroke', color)
-        }
-        if(color =='white'){
-          node.setAttribute('stroke', color)
-        }
+        svg.appendChild(node)
         window.addEventListener('mousemove', onMove)
         e.preventDefault()
       }
     })
-
+    for (var button of colorSelect2) {
+      button.addEventListener('click', function (e) {
+        color = this.getAttribute('id')
+        colorSelect.value = color
+      })
+    }
     // svg.addEventListener('mouseup', function (e) {
     //   if (e.which == 1) {
     //     var d = node.getAttribute('d')
@@ -145,16 +208,54 @@
       }
       var pos = mouse(svg)
       if (tool == 'line') {
-
         var d = node.getAttribute('d')
         d += `L ${pos.x} ${pos.y}`
         node.setAttribute('d', d)
       }
-      else if (tool = 'rect') {
+      if (tool == 'rect') {
         var width = pos.x - startPos.x
         var height = pos.y - startPos.y
-        node.setAttribute('width',width)
+        node.setAttribute('width', width)
         node.setAttribute('height', height)
+      }
+      if (tool == 'circle') {
+        var cx = (pos.x + startPos.x) / 2
+        var cy = (pos.y + startPos.y) / 2
+        var rx = (pos.x - startPos.x) / 2
+        var ry = (pos.y - startPos.y) / 2
+        node.setAttribute('cx', cx)
+        node.setAttribute('cy', cy)
+        node.setAttribute('rx', rx)
+        node.setAttribute('ry', ry)
+      }
+      if (tool == 'triangle') {
+        var points = node.getAttribute('points')
+        points = `${startPos.x},${pos.y} ${(pos.x + startPos.x) / 2},${startPos.y} ${pos.x},${pos.y}`
+        node.setAttribute('points', points)
+      }
+      if (tool == 'Rounded Rectangle') {
+        var width = pos.x - startPos.x
+        var height = pos.y - startPos.y
+        node.setAttribute('width', width)
+        node.setAttribute('height', height)
+        if (height > 10) {
+          node.setAttribute('rx', 5)
+        }
+      }
+      if (tool == 'diamond') {
+        var points = node.getAttribute('points')
+        points = `${startPos.x},${(pos.y + startPos.y)/2} ${(pos.x + startPos.x)/2},${startPos.y} ${pos.x},${(pos.y + startPos.y)/2} ${(pos.x + startPos.x)/2},${pos.y}`
+        node.setAttribute('points', points)
+      }
+      if (tool == 'right triangle') {
+        var points = node.getAttribute('points')
+        points = `${startPos.x},${startPos.y} ${startPos.x},${pos.y} ${pos.x},${pos.y}`
+        node.setAttribute('points', points)
+      }
+      if (tool == 'pentagon') {
+        var points = node.getAttribute('points')
+        points = `${startPos.x},${startPos.y} ${startPos.x},${pos.y} ${pos.x},${pos.y}`
+        node.setAttribute('points', points)
       }
     }
     window.addEventListener('keydown', function (e) {
